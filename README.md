@@ -17,6 +17,7 @@ The instructor will give you a ticket number. The tickets can be found in the is
 1. Work only in your branch and inside your folder.
 2. All the commit should include the ticket number it is associated with. For example: `#4 rearrange the conditionals in the factory method`. This means that the commit is for ticket 4. This will greately help to easily identify which tasks you have completed.
 3. Push your commits.
+4. If not mentioned otherwise, you should have unit tests to test/run your code instead of a main method.
 
 
 
