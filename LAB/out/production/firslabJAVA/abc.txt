@@ -1,0 +1,135 @@
+Benchmark Summary
+  Single-Core Score             3564
+    Crypto Score                  2915
+    Integer Score                 3711
+    Floating Point Score          3247
+    Memory Score                  3871
+  Multi-Core Score              6907
+    Crypto Score                  5432
+    Integer Score                 8165
+    Floating Point Score          6983
+    Memory Score                  4332
+
+System Information
+  Operating System              macOS 10.14.6 (Build 18G1012)
+  Model                         MacBook Pro (13-inch Retina Mid 2014)
+  Model ID                      MacBookPro11,1
+  Motherboard                   Apple Inc. Mac-189A3D4F975D5FFC MacBookPro11,1
+  Memory                        8.00 GB 1600 MHz DDR3
+  BIOS                          Apple Inc. 156.0.0.0.0
+
+Processor Information
+  Name                          Intel Core i5-4278U
+  Topology                      1 Processor, 2 Cores, 4 Threads
+  Identifier                    GenuineIntel Family 6 Model 69 Stepping 1
+  Base Frequency                2.60 GHz
+  L1 Instruction Cache          32.0 KB x 2
+  L1 Data Cache                 32.0 KB x 2
+  L2 Cache                      256 KB x 2
+  L3 Cache                      3.00 MB
+
+
+Single-Core Performance
+                   AES
+              2915 ||||||||
+                  LZMA
+              2959 ||||||||
+                  JPEG
+              3790 ||||||||||
+                 Canny
+              3404 |||||||||
+                   Lua
+              3464 ||||||||||
+              Dijkstra
+              3960 |||||||||||
+                SQLite
+              3254 |||||||||
+           HTML5 Parse
+              3332 |||||||||
+             HTML5 DOM
+              4000 |||||||||||
+  Histogram Equalization
+              3324 |||||||||
+         PDF Rendering
+              3972 |||||||||||
+                  LLVM
+              5989 |||||||||||||||||
+                Camera
+              3800 |||||||||||
+                 SGEMM
+              2949 ||||||||
+                  SFFT
+              3491 ||||||||||
+        N-Body Physics
+              3179 |||||||||
+           Ray Tracing
+              2384 ||||||
+    Rigid Body Physics
+              3637 ||||||||||
+                   HDR
+              3498 ||||||||||
+         Gaussian Blur
+              3632 ||||||||||
+    Speech Recognition
+              3194 |||||||||
+        Face Detection
+              3487 ||||||||||
+           Memory Copy
+              3337 |||||||||
+        Memory Latency
+              5833 ||||||||||||||||
+      Memory Bandwidth
+              2982 ||||||||
+
+Multi-Core Performance
+                   AES
+              5432 |||||||||||||||
+                  LZMA
+              7407 |||||||||||||||||||||
+                  JPEG
+              9395 |||||||||||||||||||||||||||
+                 Canny
+              8028 |||||||||||||||||||||||
+                   Lua
+              6770 |||||||||||||||||||
+              Dijkstra
+              9520 |||||||||||||||||||||||||||
+                SQLite
+              6737 |||||||||||||||||||
+           HTML5 Parse
+              6773 |||||||||||||||||||
+             HTML5 DOM
+              6972 ||||||||||||||||||||
+  Histogram Equalization
+              7577 |||||||||||||||||||||
+         PDF Rendering
+              8383 ||||||||||||||||||||||||
+                  LLVM
+             13818 ||||||||||||||||||||||||||||||||||||||||
+                Camera
+              8736 |||||||||||||||||||||||||
+                 SGEMM
+              3920 |||||||||||
+                  SFFT
+              7301 |||||||||||||||||||||
+        N-Body Physics
+              7166 ||||||||||||||||||||
+           Ray Tracing
+              6538 ||||||||||||||||||
+    Rigid Body Physics
+              9599 |||||||||||||||||||||||||||
+                   HDR
+              8336 ||||||||||||||||||||||||
+         Gaussian Blur
+              7873 ||||||||||||||||||||||
+    Speech Recognition
+              6165 |||||||||||||||||
+        Face Detection
+              7590 |||||||||||||||||||||
+           Memory Copy
+              4117 |||||||||||
+        Memory Latency
+              5891 |||||||||||||||||
+      Memory Bandwidth
+              3354 |||||||||
+
