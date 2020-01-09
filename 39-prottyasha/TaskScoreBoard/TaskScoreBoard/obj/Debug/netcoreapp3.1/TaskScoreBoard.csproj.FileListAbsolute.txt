@@ -1,0 +1,11 @@
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\bin\Debug\netcoreapp3.1\TaskScoreBoard.exe
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\bin\Debug\netcoreapp3.1\TaskScoreBoard.deps.json
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\bin\Debug\netcoreapp3.1\TaskScoreBoard.runtimeconfig.json
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\bin\Debug\netcoreapp3.1\TaskScoreBoard.runtimeconfig.dev.json
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\bin\Debug\netcoreapp3.1\TaskScoreBoard.dll
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\bin\Debug\netcoreapp3.1\TaskScoreBoard.pdb
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\obj\Debug\netcoreapp3.1\TaskScoreBoard.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\obj\Debug\netcoreapp3.1\TaskScoreBoard.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\obj\Debug\netcoreapp3.1\TaskScoreBoard.dll
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\obj\Debug\netcoreapp3.1\TaskScoreBoard.pdb
+C:\Users\ASUS\Desktop\Design Pattern\TaskRepo\design-patterns-swe-17\39-prottyasha\TaskScoreBoard\TaskScoreBoard\obj\Debug\netcoreapp3.1\TaskScoreBoard.csprojAssemblyReference.cache
