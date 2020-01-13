@@ -1,0 +1,13 @@
+airline: Aer Lingus
+avail_seat_km_per_week: 320906734
+incidents: 2
+=
+airline: Aeroflot
+avail_seat_km_per_week: 1197672318
+incidents: 76
+fatal_accidents: 14
+fatalities: 128
+=
+airline: Aerolineas Argentinas  
+avail_seat_km_per_week: 385803648
+incidents: 6
