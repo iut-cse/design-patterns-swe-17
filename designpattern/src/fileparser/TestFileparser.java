@@ -8,7 +8,7 @@ class TestFileparser {
 
 	@Test
 	void test01() {
-		String filepath = "G:\\My Programme JAVA\\Workplace\\designpattern\\csvfile.scsv";
+		String filepath = "csvfile.scsv";
 		Parser p = new FileParser().getparser(filepath);
 		assertEquals(p.getitemcount(), 3);
 		assertEquals(p.getdata(1), "Aeroflot,1197672318,76,14,128");
@@ -16,7 +16,7 @@ class TestFileparser {
 
 	@Test
 	void test02() {
-		String filepath = "G:\\My Programme JAVA\\Workplace\\designpattern\\jsonfile.sjson";
+		String filepath = "sjsonfile.sjson";
 		Parser p = new FileParser().getparser(filepath);
 
 		assertEquals(p.getitemcount(), 3);

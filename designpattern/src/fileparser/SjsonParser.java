@@ -1,18 +1,77 @@
 package fileparser;
 
-public class SjsonParser extends Parser{
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class SjsonParser extends Parser {
+
+	File file;
 
 	public SjsonParser(String filepath) {
-		// TODO Auto-generated constructor stub
+		file = new File(filepath);
 	}
+
 	@Override
 	String getdata(int index) {
-		// TODO Auto-generated method stub
-		return "Aeroflot,1197672318,76,14,128";
+		String data = "";
+		int count = 0;
+		Scanner sc;
+		try {
+			sc = new Scanner(file);
+			while (sc.hasNextLine()) {
+				if (count == index) {
+					while (sc.hasNextLine()) {
+						String temp = sc.nextLine();
+						if (temp.equals("=")) {
+							count++;
+							break;
+						}
+						if (data.equals("")) {
+							data = data
+									+ temp.substring(temp.indexOf(": ") + 2);
+						} else {
+							data = data + ","
+									+ temp.substring(temp.indexOf(": ") + 2);
+						}
+					}
+				} else {
+					while (sc.hasNextLine()) {
+						String temp = sc.nextLine();
+						if (temp.equals("=")) {
+							count++;
+							break;
+						}
+					}
+				}
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		System.out.println(data);
+		return data;
 	}
+
 	@Override
 	int getitemcount() {
-		// TODO Auto-generated method stub
-		return 3;
+		int count = 1;
+		try {
+			Scanner sc = new Scanner(file);
+			if (!sc.hasNextLine()) {
+				count--;
+				return count;
+			}
+			while (sc.hasNextLine()) {
+				String temp = sc.nextLine();
+				if (temp.equals("=")) {
+					count++;
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return count;
 	}
 }
