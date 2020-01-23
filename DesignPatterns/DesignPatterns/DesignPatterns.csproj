@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="__SampleData\" />
     <Folder Include="_00_Mohayemin\Reports\" />
   </ItemGroup>
 
