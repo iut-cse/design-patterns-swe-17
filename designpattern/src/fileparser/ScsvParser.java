@@ -15,7 +15,7 @@ public class ScsvParser extends Parser {
 	}
 
 	@Override
-	String getdata(int index) {
+	public String getdata(int index) {
 		String data = null;
 		int count = -1;
 		Scanner sc;
@@ -39,7 +39,7 @@ public class ScsvParser extends Parser {
 	}
 
 	@Override
-	int getitemcount() {
+	public int getitemcount() {
 		int count = -1;
 		try {
 			Scanner sc = new Scanner(file);
