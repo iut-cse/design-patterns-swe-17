@@ -8,7 +8,6 @@ namespace DesignPatterns._00_Mohayemin.Reports
 {
     class ReportTable : IRenderable
     {
-        internal List<ReportRow> rows;
         internal List<ReportColumn> cols;
         internal ReportCell[,] cells;
 
@@ -38,7 +37,6 @@ namespace DesignPatterns._00_Mohayemin.Reports
 
             var rowCount = 1 + departments.Count + 1;
             var colCount = 1 + 7 + 1;
-            rows = Enumerable.Range(0, rowCount).ToList().ConvertAll(n => new ReportRow());
             cols = Enumerable.Range(0, colCount).ToList().ConvertAll(n => new ReportColumn()); ;
 
             cells = new ReportCell[rowCount, colCount];
@@ -55,7 +53,6 @@ namespace DesignPatterns._00_Mohayemin.Reports
             {
                 for (int c = 0; c < cells.GetLength(1); c++)
                 {
-                    rows[r].AddCell(cells[r, c]);
                     cols[c].AddCell(cells[r, c]);
                 }
             }
@@ -105,21 +102,6 @@ namespace DesignPatterns._00_Mohayemin.Reports
         }
     }
 
-    class ReportRow
-    {
-        private List<ReportCell> cells;
-        public ReportRow()
-        {
-            cells = new List<ReportCell>();
-        }
-
-        public void AddCell(ReportCell cell)
-        {
-            cells.Add(cell);
-            cell.Row = this;
-        }
-    }
-
     class ReportColumn
     {
         private readonly List<ReportCell> cells;
@@ -133,7 +115,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
         public void AddCell(ReportCell cell)
         {
             cells.Add(cell);
-            cell.Col = this;
+            cell.Column = this;
             Width = Math.Max(Width, cell.content.Length);
         }
     }
@@ -141,8 +123,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
     class ReportCell : IRenderable
     {
         public readonly string content;
-        public ReportRow Row { get; set; }
-        public ReportColumn Col { get; set; }
+        public ReportColumn Column { get; set; }
 
         public ReportCell(string content)
         {
@@ -151,7 +132,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
 
         public void Render(StringBuilder builder)
         {
-            builder.Append(content.PadLeft(Col.Width));
+            builder.Append(content.PadLeft(Column.Width));
         }
     }
 
@@ -173,11 +154,11 @@ namespace DesignPatterns._00_Mohayemin.Reports
 
         public ClassHour(string department
             , DateTime date
-            , int duration)
+            , int durationHours)
         {
             this.department = department;
             this.date = date;
-            this.durationHours = duration;
+            this.durationHours = durationHours;
         }
     }
 }
