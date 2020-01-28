@@ -49,7 +49,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
             cols = new List<ReportColumn>();
             cols.Add(new ReportColumn());
 
-            cells = new ReportCell[1 + departments.Count /*+ 1*/, 1 + 7 + 1];
+            cells = new ReportCell[1 + departments.Count + 1, 1 + 7 + 1];
 
             int r = 0, c = 0;
             cells[r, c] = new ReportCell("Department");
@@ -75,7 +75,18 @@ namespace DesignPatterns._00_Mohayemin.Reports
                 cells[r, c] = new ReportDataCell(total);
             }
 
-            
+
+            c = 0;
+            cells[r, c] = new ReportCell("Total");
+            var grandTotal = 0;
+            for (c++; c <= 7; c++)
+            {
+                var dow = AllDaysOfWeek.FromMonday[c - 1];
+                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow).Sum(ch => ch.durationHours);
+                cells[r, c] = new ReportDataCell(value);
+                grandTotal += value;
+            }
+            cells[r, c] = new ReportDataCell(grandTotal);
         }
     }
 
