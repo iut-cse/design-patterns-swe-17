@@ -70,7 +70,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
                     var dow = AllDaysOfWeek.FromMonday[c - 1];
                     var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
                     cells[r, c] = new ReportDataCell(value);
-                    total += 0;
+                    total += value;
                 }
                 cells[r, c] = new ReportDataCell(total);
             }
@@ -129,7 +129,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
 
         public void Render(StringBuilder builder)
         {
-            builder.Append($"{content}");
+            builder.Append(content);
         }
     }
 
