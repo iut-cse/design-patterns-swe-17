@@ -8,9 +8,9 @@ namespace DesignPatterns._00_Mohayemin.Reports
 {
     class ReportTable : IRenderable
     {
-        private List<ReportRow> rows;
-        private List<ReportColumn> cols;
-        private ReportCell[,] cells;
+        internal List<ReportRow> rows;
+        internal List<ReportColumn> cols;
+        internal ReportCell[,] cells;
 
         public ReportTable(List<ClassHour> classHours)
         {
@@ -36,19 +36,29 @@ namespace DesignPatterns._00_Mohayemin.Reports
         {
             var departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
 
-            rows = new List<ReportRow>();
-            cols = new List<ReportColumn>();
-
             var rowCount = 1 + departments.Count + 1;
             var colCount = 1 + 7 + 1;
+            rows = Enumerable.Range(0, rowCount).ToList().ConvertAll(n => new ReportRow());
+            cols = Enumerable.Range(0, colCount).ToList().ConvertAll(n => new ReportColumn()); ;
+
             cells = new ReportCell[rowCount, colCount];
 
             BuildHeaderRow(0);
 
-            for (int r = 1; r <= departments.Count; r++)
+            for (var r = 1; r <= departments.Count; r++)
                 BuildDepartmentRow(classHours, departments, r);
 
             BuildTotalRow(classHours, rowCount - 1);
+
+
+            for (var r = 0; r < cells.GetLength(0); r++)
+            {
+                for (int c = 0; c < cells.GetLength(1); c++)
+                {
+                    rows[r].AddCell(cells[r, c]);
+                    cols[c].AddCell(cells[r, c]);
+                }
+            }
         }
 
         private void BuildTotalRow(List<ClassHour> classHours, int r)
@@ -60,10 +70,10 @@ namespace DesignPatterns._00_Mohayemin.Reports
             {
                 var dow = AllDaysOfWeek.FromMonday[c - 1];
                 var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow).Sum(ch => ch.durationHours);
-                cells[r, c] = new ReportDataCell(value);
+                cells[r, c] = new ReportCell(value.ToString());
                 grandTotal += value;
             }
-            cells[r, c] = new ReportDataCell(grandTotal);
+            cells[r, c] = new ReportCell(grandTotal.ToString());
         }
 
         private void BuildDepartmentRow(List<ClassHour> classHours, List<string> departments, int r)
@@ -76,16 +86,17 @@ namespace DesignPatterns._00_Mohayemin.Reports
             {
                 var dow = AllDaysOfWeek.FromMonday[c - 1];
                 var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
-                cells[r, c] = new ReportDataCell(value);
+                cells[r, c] = new ReportCell(value.ToString());
                 total += value;
             }
-            cells[r, c] = new ReportDataCell(total);
+            cells[r, c] = new ReportCell(total.ToString());
         }
 
         private void BuildHeaderRow(int r)
         {
             var c = 0;
             cells[r, c] = new ReportCell("Department");
+
             for (c++; c <= 7; c++)
             {
                 cells[r, c] = new ReportCell(AllDaysOfWeek.FromMonday[c - 1].ToString());
@@ -96,47 +107,43 @@ namespace DesignPatterns._00_Mohayemin.Reports
 
     class ReportRow
     {
-        private readonly ReportCell departmentCell;
-        private readonly List<ReportCell> dayCells;
-        private readonly ReportCell totalCell;
-
+        private List<ReportCell> cells;
         public ReportRow()
         {
+            cells = new List<ReportCell>();
+        }
 
+        public void AddCell(ReportCell cell)
+        {
+            cells.Add(cell);
+            cell.Row = this;
         }
     }
 
     class ReportColumn
     {
-        private List<ReportCell> allCells;
-        private ReportCell headerCell;
-        private List<ReportDataCell> dataCells;
+        private readonly List<ReportCell> cells;
+        public int Width { get; private set; }
         public ReportColumn()
         {
-            allCells = new List<ReportCell>();
+            cells = new List<ReportCell>();
+            Width = 0;
         }
 
-        public void SetHeaderCell(ReportCell headerCell)
+        public void AddCell(ReportCell cell)
         {
-            this.headerCell = headerCell;
-            allCells.Add(headerCell);
-        }
-
-        public void AddDataCell(ReportDataCell dataCell)
-        {
-            allCells.Add(dataCell);
-            dataCells.Add(dataCell);
-        }
-
-        public int CalculateWidth()
-        {
-            return allCells.Max(c => c.content.Length);
+            cells.Add(cell);
+            cell.Col = this;
+            Width = Math.Max(Width, cell.content.Length);
         }
     }
 
     class ReportCell : IRenderable
     {
         public readonly string content;
+        public ReportRow Row { get; set; }
+        public ReportColumn Col { get; set; }
+
         public ReportCell(string content)
         {
             this.content = content;
@@ -144,17 +151,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
 
         public void Render(StringBuilder builder)
         {
-            builder.Append(content);
-        }
-    }
-
-    class ReportDataCell : ReportCell
-    {
-        public readonly double value;
-
-        public ReportDataCell(double value) : base(value.ToString())
-        {
-            this.value = value;
+            builder.Append(content.PadLeft(Col.Width));
         }
     }
 
