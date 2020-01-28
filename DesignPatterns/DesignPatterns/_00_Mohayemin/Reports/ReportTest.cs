@@ -14,6 +14,7 @@ namespace DesignPatterns._00_Mohayemin.Reports
         public ReportTableTest(ITestOutputHelper output)
         {
             this.output = output;
+            
             data = new List<ClassHour>
             {
                 new ClassHour("Physics", new DateTime(2020, 1, 20), 4),
@@ -31,7 +32,8 @@ namespace DesignPatterns._00_Mohayemin.Reports
             ReportTable table = new ReportTable(data);
             StringBuilder sb = new StringBuilder();
             table.Render(sb);
-            output.WriteLine(sb.ToString());
+            output.WriteLine("\n" + sb.ToString());
+            Assert.True(false);
         }
 
         [Fact]
