@@ -37,46 +37,23 @@ namespace DesignPatterns._00_Mohayemin.Reports
             var departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
 
             rows = new List<ReportRow>();
-            rows.Add(new ReportRow());
-            foreach (var department in departments)
-            {
-                rows.Add(new ReportRow());
-            }
-            rows.Add(new ReportRow());
-            //rows = departments.ConvertAll(d => new ReportRow(d, classHours.FindAll(ch => ch.department == d)));
-
-
             cols = new List<ReportColumn>();
-            cols.Add(new ReportColumn());
 
-            cells = new ReportCell[1 + departments.Count + 1, 1 + 7 + 1];
+            var rowCount = 1 + departments.Count + 1;
+            var colCount = 1 + 7 + 1;
+            cells = new ReportCell[rowCount, colCount];
 
-            int r = 0, c = 0;
-            cells[r, c] = new ReportCell("Department");
-            for (c++; c <= 7; c++)
-            {
-                cells[r, c] = new ReportCell(AllDaysOfWeek.FromMonday[c - 1].ToString());
-            }
-            cells[r, c] = new ReportCell("Total");
+            BuildHeaderRow(0);
 
-            for (r++; r < departments.Count + 1; r++)
-            {
-                c = 0;
-                var department = departments[r - 1];
-                cells[r, c] = new ReportCell(department);
-                var total = 0;
-                for (c++; c <= 7; c++)
-                {
-                    var dow = AllDaysOfWeek.FromMonday[c - 1];
-                    var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
-                    cells[r, c] = new ReportDataCell(value);
-                    total += value;
-                }
-                cells[r, c] = new ReportDataCell(total);
-            }
+            for (int r = 1; r <= departments.Count; r++)
+                BuildDepartmentRow(classHours, departments, r);
 
+            BuildTotalRow(classHours, rowCount - 1);
+        }
 
-            c = 0;
+        private void BuildTotalRow(List<ClassHour> classHours, int r)
+        {
+            int c = 0;
             cells[r, c] = new ReportCell("Total");
             var grandTotal = 0;
             for (c++; c <= 7; c++)
@@ -87,6 +64,33 @@ namespace DesignPatterns._00_Mohayemin.Reports
                 grandTotal += value;
             }
             cells[r, c] = new ReportDataCell(grandTotal);
+        }
+
+        private void BuildDepartmentRow(List<ClassHour> classHours, List<string> departments, int r)
+        {
+            int c = 0;
+            var department = departments[r - 1];
+            cells[r, c] = new ReportCell(department);
+            var total = 0;
+            for (c++; c <= 7; c++)
+            {
+                var dow = AllDaysOfWeek.FromMonday[c - 1];
+                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
+                cells[r, c] = new ReportDataCell(value);
+                total += value;
+            }
+            cells[r, c] = new ReportDataCell(total);
+        }
+
+        private void BuildHeaderRow(int r)
+        {
+            var c = 0;
+            cells[r, c] = new ReportCell("Department");
+            for (c++; c <= 7; c++)
+            {
+                cells[r, c] = new ReportCell(AllDaysOfWeek.FromMonday[c - 1].ToString());
+            }
+            cells[r, c] = new ReportCell("Total");
         }
     }
 
