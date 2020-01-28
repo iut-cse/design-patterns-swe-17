@@ -1,1 +1,2 @@
-Yahoo! I have successfully created a branch.
+Yahoo!
+I have successfully created a branch.
