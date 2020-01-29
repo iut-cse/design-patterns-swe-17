@@ -162,3 +162,15 @@ namespace DesignPatterns._00_Mohayemin.Reports
         }
     }
 }
+
+/**
+ * Your Student ID:
+ * Your Nick Name:
+ */
+
+/** 
+ * Place an x in the empty box below when the corresponding task is done.
+ * [ ] Task 1
+ * [ ] Task 2
+ * [ ] Task 3
+ */
