@@ -1,15 +1,13 @@
-﻿using static System.DayOfWeek;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System;
 using System.Text;
 
 namespace DesignPatterns._00_Mohayemin.Reports
 {
-    class ReportTable : IRenderable
+    public class ReportTable : IRenderable
     {
-        internal List<ReportColumn> cols;
-        internal ReportCell[,] cells;
+        private List<ReportColumn> cols;
+        private ReportCell[,] cells;
 
         public ReportTable(List<ClassHour> classHours)
         {
@@ -101,76 +99,5 @@ namespace DesignPatterns._00_Mohayemin.Reports
             cells[r, c] = new ReportCell("Total");
         }
     }
-
-    class ReportColumn
-    {
-        private readonly List<ReportCell> cells;
-        public int Width { get; private set; }
-        public ReportColumn()
-        {
-            cells = new List<ReportCell>();
-            Width = 0;
-        }
-
-        public void AddCell(ReportCell cell)
-        {
-            cells.Add(cell);
-            cell.Column = this;
-            Width = Math.Max(Width, cell.content.Length);
-        }
-    }
-
-    class ReportCell : IRenderable
-    {
-        public readonly string content;
-        public ReportColumn Column { get; set; }
-
-        public ReportCell(string content)
-        {
-            this.content = content;
-        }
-
-        public void Render(StringBuilder builder)
-        {
-            builder.Append(content.PadLeft(Column.Width));
-        }
-    }
-
-    interface IRenderable
-    {
-        void Render(StringBuilder builder);
-    }
-
-    static class AllDaysOfWeek
-    {
-        public static DayOfWeek[] FromMonday = new[] { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday };
-    }
-
-    class ClassHour
-    {
-        public readonly string department;
-        public readonly DateTime date;
-        public readonly int durationHours;
-
-        public ClassHour(string department
-            , DateTime date
-            , int durationHours)
-        {
-            this.department = department;
-            this.date = date;
-            this.durationHours = durationHours;
-        }
-    }
 }
 
-/**
- * Your Student ID:
- * Your Nick Name:
- */
-
-/** 
- * Place an x in the empty box below when the corresponding task is done.
- * [ ] Task 1
- * [ ] Task 2
- * [ ] Task 3
- */
