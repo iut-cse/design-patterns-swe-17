@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPatterns._00_Mohayemin.Reports
+namespace DesignPatterns.Reports
 {
     public class ClassHour
     {

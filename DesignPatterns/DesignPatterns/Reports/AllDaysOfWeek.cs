@@ -1,7 +1,7 @@
-﻿using static System.DayOfWeek;
-using System;
+﻿using System;
+using static System.DayOfWeek;
 
-namespace DesignPatterns._00_Mohayemin.Reports
+namespace DesignPatterns.Reports
 {
     public static class AllDaysOfWeek
     {

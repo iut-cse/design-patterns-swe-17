@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 
-namespace DesignPatterns._00_Mohayemin.Reports
+namespace DesignPatterns.Reports
 {
     public class ReportColumn
     {
         private readonly List<ReportCell> cells;
         public int Width { get; private set; }
+
         public ReportColumn()
         {
             cells = new List<ReportCell>();

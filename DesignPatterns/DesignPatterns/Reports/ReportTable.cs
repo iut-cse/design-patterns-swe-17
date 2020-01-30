@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace DesignPatterns._00_Mohayemin.Reports
+namespace DesignPatterns.Reports
 {
     public class ReportTable : IRenderable
     {
@@ -45,7 +45,6 @@ namespace DesignPatterns._00_Mohayemin.Reports
                 BuildDepartmentRow(classHours, departments, r);
 
             BuildTotalRow(classHours, rowCount - 1);
-
 
             for (var r = 0; r < cells.GetLength(0); r++)
             {
@@ -100,4 +99,3 @@ namespace DesignPatterns._00_Mohayemin.Reports
         }
     }
 }
-
