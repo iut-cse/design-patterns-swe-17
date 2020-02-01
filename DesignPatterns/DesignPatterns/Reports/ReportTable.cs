@@ -41,62 +41,62 @@ namespace DesignPatterns.Reports
 
             BuildHeaderRow();
 
-            for (var r = 1; r <= departments.Count; r++)
-                BuildDepartmentRow(classHours, departments, r);
+            for (var rowIndex = 1; rowIndex <= departments.Count; rowIndex++)
+                BuildDepartmentRow(classHours, departments, rowIndex);
 
             BuildTotalRow(classHours, rowCount - 1);
 
-            for (var r = 0; r < cells.GetLength(0); r++)
+            for (var rowIndex = 0; rowIndex < rowCount; rowIndex++)
             {
-                for (int c = 0; c < cells.GetLength(1); c++)
+                for (int colIndex = 0; colIndex < colCount; colIndex++)
                 {
-                    cols[c].AddCell(cells[r, c]);
+                    cols[colIndex].AddCell(cells[rowIndex, colIndex]);
                 }
             }
         }
 
-        private void BuildTotalRow(List<ClassHour> classHours, int r)
+        private void BuildTotalRow(List<ClassHour> classHours, int rowIndex)
         {
-            int c = 0;
-            cells[r, c] = new ReportCell("Total");
+            int colIndex = 0;
+            cells[rowIndex, colIndex] = new ReportCell("Total");
             var grandTotal = 0;
-            for (c++; c <= 7; c++)
+            for (colIndex++; colIndex <= 7; colIndex++)
             {
-                var dow = AllDaysOfWeek.FromMonday[c - 1];
+                var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
                 var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow).Sum(ch => ch.durationHours);
-                cells[r, c] = new ReportCell(value.ToString());
+                cells[rowIndex, colIndex] = new ReportCell(value.ToString());
                 grandTotal += value;
             }
-            cells[r, c] = new ReportCell(grandTotal.ToString());
+            cells[rowIndex, colIndex] = new ReportCell(grandTotal.ToString());
         }
 
-        private void BuildDepartmentRow(List<ClassHour> classHours, List<string> departments, int r)
+        private void BuildDepartmentRow(List<ClassHour> classHours, List<string> departments, int rowIndex)
         {
-            int c = 0;
-            var department = departments[r - 1];
-            cells[r, c] = new ReportCell(department);
+            int colIndex = 0;
+            var department = departments[rowIndex - 1];
+            cells[rowIndex, colIndex] = new ReportCell(department);
             var total = 0;
-            for (c++; c <= 7; c++)
+            for (colIndex++; colIndex <= 7; colIndex++)
             {
-                var dow = AllDaysOfWeek.FromMonday[c - 1];
+                var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
                 var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
-                cells[r, c] = new ReportCell(value.ToString());
+                cells[rowIndex, colIndex] = new ReportCell(value.ToString());
                 total += value;
             }
-            cells[r, c] = new ReportCell(total.ToString());
+            cells[rowIndex, colIndex] = new ReportCell(total.ToString());
         }
 
         private void BuildHeaderRow()
         {
-            int r = 0;
-            var c = 0;
-            cells[r, c] = new ReportCell("Department");
+            int rowIndex = 0;
+            var colIndex = 0;
+            cells[rowIndex, colIndex] = new ReportCell("Department");
 
-            for (c++; c <= 7; c++)
+            for (colIndex++; colIndex <= 7; colIndex++)
             {
-                cells[r, c] = new ReportCell(AllDaysOfWeek.FromMonday[c - 1].ToString());
+                cells[rowIndex, colIndex] = new ReportCell(AllDaysOfWeek.FromMonday[colIndex - 1].ToString());
             }
-            cells[r, c] = new ReportCell("Total");
+            cells[rowIndex, colIndex] = new ReportCell("Total");
         }
     }
 }
