@@ -41,7 +41,7 @@ namespace DesignPatterns.Reports
             var colCount = 1 + 7 + 1;
             columns = new List<ReportColumn>();
             columns.Add(new ReportColumn(firstColumnAlignment));
-            columns.AddRange(Enumerable.Range(1, colCount).ToList().ConvertAll(n => new ReportColumn("left")));
+            columns.AddRange(Enumerable.Range(1, colCount).ToList().ConvertAll(n => new ReportColumn("right")));
 
             cells = new ReportCell[rowCount, colCount];
 

@@ -6,7 +6,7 @@ namespace DesignPatterns.Reports
     public class ReportColumn
     {
         private readonly List<ReportCell> cells;
-        private string alignment;
+        public readonly string alignment;
         public int Width { get; private set; }
 
         public ReportColumn(string alignment)
