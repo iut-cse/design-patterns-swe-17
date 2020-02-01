@@ -4,16 +4,18 @@
     {
         public string GetStats()
         {
-            var stats = GetGameInfo() + "\n";
+            var stats = "";
+            stats += GetBestScorer();
             stats += "== == ==\n";
             stats += GetScore() + "\n";
             stats += "== == ==\n";
-            stats += GetBestScorer();
+            stats += GetGameInfo() + "\n";
+            
             return stats;
         }
 
-        public abstract string GetBestScorer();
-        public abstract string GetScore();
-        public abstract string GetGameInfo();
+        protected abstract string GetBestScorer();
+        protected abstract string GetScore();
+        protected abstract string GetGameInfo();
     }
 }

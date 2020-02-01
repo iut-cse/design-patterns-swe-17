@@ -2,17 +2,17 @@
 {
     public class FootballScoreboard : Scoreboard
     {
-        public override string GetBestScorer()
+        protected override string GetBestScorer()
         {
             return "Player of the match: Cedric of Hufflepuff";
         }
 
-        public override string GetGameInfo()
+        protected override string GetGameInfo()
         {
             return "Gryffindor vs Hufflepuff";
         }
 
-        public override string GetScore()
+        protected override string GetScore()
         {
             return "2 - 3";
         }
