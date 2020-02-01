@@ -39,7 +39,7 @@ namespace DesignPatterns.Reports
 
             cells = new ReportCell[rowCount, colCount];
 
-            BuildHeaderRow(0);
+            BuildHeaderRow();
 
             for (var r = 1; r <= departments.Count; r++)
                 BuildDepartmentRow(classHours, departments, r);
@@ -86,8 +86,9 @@ namespace DesignPatterns.Reports
             cells[r, c] = new ReportCell(total.ToString());
         }
 
-        private void BuildHeaderRow(int r)
+        private void BuildHeaderRow()
         {
+            int r = 0;
             var c = 0;
             cells[r, c] = new ReportCell("Department");
 
