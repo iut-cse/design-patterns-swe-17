@@ -8,10 +8,14 @@ namespace DesignPatterns.Reports
     {
         private List<ReportColumn> cols;
         private ReportCell[,] cells;
+        private readonly List<string> departments;
+        private readonly List<ClassHour> classHours;
 
         public ReportTable(List<ClassHour> classHours)
         {
-            BuildComponents(classHours);
+            this.classHours = classHours;
+            this.departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
+            BuildComponents();
         }
 
         public void Render(StringBuilder builder)
@@ -29,10 +33,8 @@ namespace DesignPatterns.Reports
             }
         }
 
-        private void BuildComponents(List<ClassHour> classHours)
+        private void BuildComponents()
         {
-            var departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
-
             var rowCount = 1 + departments.Count + 1;
             var colCount = 1 + 7 + 1;
             cols = Enumerable.Range(0, colCount).ToList().ConvertAll(n => new ReportColumn()); ;
@@ -42,9 +44,9 @@ namespace DesignPatterns.Reports
             BuildHeaderRow();
 
             for (var rowIndex = 1; rowIndex <= departments.Count; rowIndex++)
-                BuildDepartmentRow(classHours, departments, rowIndex);
+                BuildDepartmentRow(rowIndex);
 
-            BuildTotalRow(classHours, rowCount - 1);
+            BuildTotalRow(rowCount - 1);
 
             for (var rowIndex = 0; rowIndex < rowCount; rowIndex++)
             {
@@ -55,7 +57,7 @@ namespace DesignPatterns.Reports
             }
         }
 
-        private void BuildTotalRow(List<ClassHour> classHours, int rowIndex)
+        private void BuildTotalRow(int rowIndex)
         {
             int colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Total");
@@ -70,7 +72,7 @@ namespace DesignPatterns.Reports
             cells[rowIndex, colIndex] = new ReportCell(grandTotal.ToString());
         }
 
-        private void BuildDepartmentRow(List<ClassHour> classHours, List<string> departments, int rowIndex)
+        private void BuildDepartmentRow(int rowIndex)
         {
             int colIndex = 0;
             var department = departments[rowIndex - 1];
