@@ -6,14 +6,16 @@ namespace DesignPatterns.Reports
 {
     public class ReportTable : IRenderable
     {
-        private List<ReportColumn> cols;
+        private List<ReportColumn> columns;
         private ReportCell[,] cells;
         private readonly List<string> departments;
         private readonly List<ClassHour> classHours;
+        private readonly string firstColumnAlignment;
 
-        public ReportTable(List<ClassHour> classHours)
+        public ReportTable(List<ClassHour> classHours, string firstColumnAlignment)
         {
             this.classHours = classHours;
+            this.firstColumnAlignment = firstColumnAlignment;
             this.departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
             BuildComponents();
         }
@@ -37,7 +39,9 @@ namespace DesignPatterns.Reports
         {
             var rowCount = 1 + departments.Count + 1;
             var colCount = 1 + 7 + 1;
-            cols = Enumerable.Range(0, colCount).ToList().ConvertAll(n => new ReportColumn()); ;
+            columns = new List<ReportColumn>();
+            columns.Add(new ReportColumn(firstColumnAlignment));
+            columns.AddRange(Enumerable.Range(1, colCount).ToList().ConvertAll(n => new ReportColumn("left")));
 
             cells = new ReportCell[rowCount, colCount];
 
@@ -52,7 +56,7 @@ namespace DesignPatterns.Reports
             {
                 for (int colIndex = 0; colIndex < colCount; colIndex++)
                 {
-                    cols[colIndex].AddCell(cells[rowIndex, colIndex]);
+                    columns[colIndex].AddCell(cells[rowIndex, colIndex]);
                 }
             }
         }

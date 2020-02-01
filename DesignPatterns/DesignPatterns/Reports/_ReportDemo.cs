@@ -20,7 +20,7 @@ namespace DesignPatterns.Reports
                 new ClassHour("English", new DateTime(2020, 1, 23), 6),
                 new ClassHour("English", new DateTime(2020, 1, 16), 1),
             };
-            ReportTable table = new ReportTable(data);
+            ReportTable table = new ReportTable(data, "left");
             StringBuilder sb = new StringBuilder();
             table.Render(sb);
             new OutputFile().Write(sb.ToString());

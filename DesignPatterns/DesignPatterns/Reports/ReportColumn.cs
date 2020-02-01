@@ -6,10 +6,12 @@ namespace DesignPatterns.Reports
     public class ReportColumn
     {
         private readonly List<ReportCell> cells;
+        private string alignment;
         public int Width { get; private set; }
 
-        public ReportColumn()
+        public ReportColumn(string alignment)
         {
+            this.alignment = alignment;
             cells = new List<ReportCell>();
             Width = 0;
         }
