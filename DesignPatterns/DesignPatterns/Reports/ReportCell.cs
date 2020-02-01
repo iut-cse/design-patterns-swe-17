@@ -14,7 +14,7 @@ namespace DesignPatterns.Reports
 
         public void Render(StringBuilder builder)
         {
-            builder.Append(content.PadRight(Column.Width));
+            builder.Append(content.PadLeft(Column.Width));
         }
     }
 }
