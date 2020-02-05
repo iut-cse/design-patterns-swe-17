@@ -1,5 +1,4 @@
-﻿using DesignPatterns.__Commons;
-using DesignPatterns.Reports;
+﻿using DesignPatterns.Reports;
 using System;
 using System.Collections.Generic;
 using System.Text;

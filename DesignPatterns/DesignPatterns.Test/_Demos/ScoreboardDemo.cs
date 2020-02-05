@@ -1,6 +1,4 @@
-﻿
-using DesignPatterns.__Commons;
-using DesignPatterns.Template.Scoreboards;
+﻿using DesignPatterns.Template.Scoreboards;
 using Xunit;
 
 namespace DesignPatterns.Test._Demos
