@@ -6,11 +6,11 @@ namespace DesignPatterns.Reports
     {
         public readonly string department;
         public readonly DateTime date;
-        public readonly int durationHours;
+        public readonly double durationHours;
 
         public ClassHour(string department
             , DateTime date
-            , int durationHours)
+            , double durationHours)
         {
             this.department = department;
             this.date = date;
