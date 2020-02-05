@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 
-namespace DesignPatterns.__Commons
+namespace DesignPatterns.Test._Demos
 {
     public class OutputFile
     {
-        private static readonly string outputFilePath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "/output.txt";
+        private static readonly string outputFilePath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "/_Demos/output.txt";
         public OutputFile Write(string content)
         {
             File.WriteAllText(outputFilePath, content);
