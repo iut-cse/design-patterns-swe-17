@@ -2,14 +2,14 @@
 
 namespace DesignPatterns.Reports
 {
-    public class ClassHour
+    public class ClassInfo
     {
         public readonly string department;
         public readonly DateTime date;
         public readonly double durationHours;
         public readonly double paymentBdt;
 
-        public ClassHour(string department
+        public ClassInfo(string department
             , DateTime date
             , double durationHours
             , double paymentBdt = 0)

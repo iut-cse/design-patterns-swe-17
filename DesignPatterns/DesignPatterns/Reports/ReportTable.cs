@@ -9,10 +9,10 @@ namespace DesignPatterns.Reports
         private List<ReportColumn> columns;
         private ReportCell[,] cells;
         private readonly List<string> departments;
-        private readonly List<ClassHour> classHours;
+        private readonly List<ClassInfo> classHours;
         private readonly string firstColumnAlignment;
 
-        public ReportTable(List<ClassHour> classHours, string firstColumnAlignment)
+        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment)
         {
             this.classHours = classHours;
             this.firstColumnAlignment = firstColumnAlignment;

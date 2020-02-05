@@ -6,10 +6,10 @@ namespace DesignPatterns.Reports.Kpis
 {
     public class TotalClassDurationKpi
     {
-        private readonly IEnumerable<ClassHour> classHours;
+        private readonly IEnumerable<ClassInfo> classHours;
         private readonly DayOfWeek dayOfWeek;
 
-        public TotalClassDurationKpi(IEnumerable<ClassHour> classHours
+        public TotalClassDurationKpi(IEnumerable<ClassInfo> classHours
             , DayOfWeek dayOfWeek)
         {
             this.classHours = classHours;
