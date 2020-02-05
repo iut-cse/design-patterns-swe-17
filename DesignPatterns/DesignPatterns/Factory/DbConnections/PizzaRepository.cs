@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace DesignPatterns.Factory.DbConnections
 {
-    class PizzaRepository
+    public class PizzaRepository
     {
         private readonly IDbConnection connection;
 

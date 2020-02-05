@@ -1,12 +1,13 @@
 ﻿using DesignPatterns.__Commons;
+using DesignPatterns.Reports;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace DesignPatterns.Reports
+namespace DesignPatterns.Test._Demos
 {
-    public class _ReportDemo
+    public class ReportDemo
     {
         [Fact]
         void Demo()

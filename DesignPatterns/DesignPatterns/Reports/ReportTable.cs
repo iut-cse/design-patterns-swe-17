@@ -65,7 +65,7 @@ namespace DesignPatterns.Reports
         {
             int colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Total");
-            var grandTotal = 0;
+            var grandTotal = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
@@ -81,7 +81,7 @@ namespace DesignPatterns.Reports
             int colIndex = 0;
             var department = departments[rowIndex - 1];
             cells[rowIndex, colIndex] = new ReportCell(department);
-            var total = 0;
+            var total = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];

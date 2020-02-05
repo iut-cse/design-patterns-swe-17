@@ -1,11 +1,9 @@
 ﻿
 using DesignPatterns.__Commons;
-using System;
-using System.IO;
+using DesignPatterns.Template.Scoreboards;
 using Xunit;
-using Xunit.Abstractions;
 
-namespace DesignPatterns.Template.Scoreboards
+namespace DesignPatterns.Test._Demos
 {
     public class ScoreboardDemo
     {
