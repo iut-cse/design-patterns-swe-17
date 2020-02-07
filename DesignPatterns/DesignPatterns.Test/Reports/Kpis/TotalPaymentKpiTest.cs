@@ -29,8 +29,8 @@ namespace DesignPatterns.Test.Reports.Kpis
         [Fact]
         public void Monday()
         {
-            var tch = new TotalPaymentKpi(data, DayOfWeek.Monday);
-            var output = tch.Calculate();
+            IKpi kpi = new TotalPaymentKpi(data, DayOfWeek.Monday);
+            var output = kpi.Calculate();
 
             Assert.Equal(1450, output["Physics"]);
             Assert.Equal(2, output["Bangla"]);

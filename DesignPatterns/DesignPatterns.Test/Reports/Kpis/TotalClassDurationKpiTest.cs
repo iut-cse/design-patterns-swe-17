@@ -37,8 +37,9 @@ namespace DesignPatterns.Test.Reports.Kpis
         [Fact]
         public void Tuesday()
         {
-            var tch = new TotalClassDurationKpi(data, DayOfWeek.Tuesday);
-            var output = tch.Calculate();
+
+            IKpi kpi = new TotalClassDurationKpi(data, DayOfWeek.Tuesday);
+            var output = kpi.Calculate();
 
             Assert.Equal(5, output["Physics"]);
             Assert.Equal(2, output["Chemistry"]);
