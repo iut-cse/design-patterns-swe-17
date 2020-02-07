@@ -25,13 +25,23 @@ namespace DesignPatterns.Test.Reports.Kpis
         }
 
         [Fact]
-        public void DoTest()
+        public void Monday()
         {
             var tch = new TotalClassDurationKpi(data, DayOfWeek.Monday);
             var output = tch.Calculate();
 
             Assert.Equal(9, output["Physics"]);
             Assert.Equal(6, output["Bangla"]);
+        }
+
+        [Fact]
+        public void Tuesday()
+        {
+            var tch = new TotalClassDurationKpi(data, DayOfWeek.Tuesday);
+            var output = tch.Calculate();
+
+            Assert.Equal(5, output["Physics"]);
+            Assert.Equal(2, output["Chemistry"]);
         }
     }
 }
