@@ -1,0 +1,38 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Reports/Kpis/TotalClassDurationKpi.cs">
+    <Files>
+      <File FileName="DesignPatterns/Reports/ClassInfo.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns/Reports/AllDaysOfWeek.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns/Reports/Kpis/TotalClassDurationKpi.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DesignPatterns" expanded="True">
+            <Node name="DesignPatterns" expanded="True">
+              <Node name="Reports" expanded="True">
+                <Node name="Kpis" expanded="True">
+                  <Node name="TotalClassDurationKpi.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="DesignPatterns.Test" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="DesignPatterns" expanded="True">
+            <Node name="DesignPatterns.Test" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
