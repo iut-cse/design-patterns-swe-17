@@ -4,19 +4,16 @@ using System.Linq;
 
 namespace DesignPatterns.Reports.Kpis
 {
-    public class TotalClassDurationKpi : IKpi
+    public class TotalClassDurationKpi : Kpi
     {
-        private readonly IEnumerable<ClassInfo> classHours;
-        private readonly DayOfWeek dayOfWeek;
 
         public TotalClassDurationKpi(IEnumerable<ClassInfo> classHours
             , DayOfWeek dayOfWeek)
+            : base(classHours, dayOfWeek)
         {
-            this.classHours = classHours;
-            this.dayOfWeek = dayOfWeek;
         }
 
-        public IDictionary<string, double> Calculate()
+        public override IDictionary<string, double> Calculate()
         {
             var filtered = classHours.Where(ch => ch.date.DayOfWeek == dayOfWeek);
             var grouped = filtered.GroupBy(ch => ch.department);
