@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DesignPatterns.Reports.Kpis
 {
-    public class TotalPaymentKpi
+    public class TotalPaymentKpi : IKpi
     {
         private readonly IEnumerable<ClassInfo> classHours;
         private readonly DayOfWeek dayOfWeek;
