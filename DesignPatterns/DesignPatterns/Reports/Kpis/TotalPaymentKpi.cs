@@ -12,12 +12,9 @@ namespace DesignPatterns.Reports.Kpis
         {
         }
 
-        public override IDictionary<string, double> Calculate()
+        protected override IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped)
         {
-            var filtered = classHours.Where(ch => ch.date.DayOfWeek == dayOfWeek);
-            var grouped = filtered.GroupBy(ch => ch.department);
-            var mapped = grouped.ToDictionary(g => g.Key, g => g.Sum(ch => ch.paymentBdt));
-            return mapped;
+            return grouped.ToDictionary(g => g.Key, g => g.Sum(ch => ch.paymentBdt));
         }
     }
 }
