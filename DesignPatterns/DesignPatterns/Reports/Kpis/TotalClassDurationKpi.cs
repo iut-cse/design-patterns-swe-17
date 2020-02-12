@@ -7,9 +7,7 @@ namespace DesignPatterns.Reports.Kpis
     public class TotalClassDurationKpi : Kpi
     {
 
-        public TotalClassDurationKpi(IEnumerable<ClassInfo> classHours
-            , DayOfWeek dayOfWeek)
-            : base(classHours, dayOfWeek)
+        public TotalClassDurationKpi(IEnumerable<ClassInfo> classHours, DayOfWeek dayOfWeek) : base(classHours, dayOfWeek)
         {
         }
 
