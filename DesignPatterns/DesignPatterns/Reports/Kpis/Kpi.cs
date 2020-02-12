@@ -16,12 +16,13 @@ namespace DesignPatterns.Reports.Kpis
             this.dayOfWeek = dayOfWeek;
         }
 
-        public IDictionary<string, double> Calculate()
+        public KpiResult Calculate()
         {
             var filtered = classHours.Where(ci => ci.date.DayOfWeek == dayOfWeek);
             var grouped = filtered.GroupBy(ci => ci.department);
-            IDictionary<string, double> mapped = GroupToDictionary(grouped);
-            return mapped;
+            var mapped = GroupToDictionary(grouped);
+            var result = new KpiResult(mapped);
+            return result;
         }
 
         protected abstract IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped);
