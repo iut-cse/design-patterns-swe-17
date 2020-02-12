@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{1C2C8799-0EA7-4668-9BDF-7055526A1FFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Test", "DesignPatterns.Test\DesignPatterns.Test.csproj", "{72B132C5-3F6B-481E-A858-A038C1F746F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{96835B1D-D7CE-43CD-A98C-272534BD6BA2}"
+	ProjectSection(SolutionItems) = preProject
+		..\Tasks\01-use-kpi-in-report-table.md = ..\Tasks\01-use-kpi-in-report-table.md
+		..\Tasks\02-implement-payment-per-hour-kpi.md = ..\Tasks\02-implement-payment-per-hour-kpi.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C2C8799-0EA7-4668-9BDF-7055526A1FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2C8799-0EA7-4668-9BDF-7055526A1FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2C8799-0EA7-4668-9BDF-7055526A1FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2C8799-0EA7-4668-9BDF-7055526A1FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B132C5-3F6B-481E-A858-A038C1F746F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B132C5-3F6B-481E-A858-A038C1F746F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B132C5-3F6B-481E-A858-A038C1F746F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B132C5-3F6B-481E-A858-A038C1F746F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C758FF8-99B3-4C11-A001-AF68164272CC}
+	EndGlobalSection
+EndGlobal
