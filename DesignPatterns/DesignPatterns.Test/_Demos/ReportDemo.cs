@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DesignPatterns.Reports.Alignments;
 using Xunit;
 
 namespace DesignPatterns.Test._Demos
@@ -20,7 +21,7 @@ namespace DesignPatterns.Test._Demos
                 new ClassInfo("English", new DateTime(2020, 1, 23), 6),
                 new ClassInfo("English", new DateTime(2020, 1, 16), 1),
             };
-            ReportTable table = new ReportTable(data, "left");
+            ReportTable table = new ReportTable(data, new LeftAlignment());
             StringBuilder sb = new StringBuilder();
             table.Render(sb);
             new OutputFile().Write(sb.ToString());

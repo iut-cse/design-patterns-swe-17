@@ -14,7 +14,7 @@ namespace DesignPatterns.Reports
 
         public void Render(StringBuilder builder)
         {
-            var alignedContent = Column.alignment == "left" ? content.PadRight(Column.Width) : content.PadLeft(Column.Width);
+            var alignedContent = Column.alignment.Align(content, Column.Width);
             builder.Append(alignedContent);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DesignPatterns.Reports.Alignments;
 
 namespace DesignPatterns.Reports
 {
@@ -10,9 +11,9 @@ namespace DesignPatterns.Reports
         private ReportCell[,] cells;
         private readonly List<string> departments;
         private readonly List<ClassInfo> classHours;
-        private readonly string firstColumnAlignment;
+        private readonly IAlignment firstColumnAlignment;
 
-        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment)
+        public ReportTable(List<ClassInfo> classHours, IAlignment firstColumnAlignment)
         {
             this.classHours = classHours;
             this.firstColumnAlignment = firstColumnAlignment;
@@ -41,7 +42,7 @@ namespace DesignPatterns.Reports
             var colCount = 1 + 7 + 1;
             columns = new List<ReportColumn>();
             columns.Add(new ReportColumn(firstColumnAlignment));
-            columns.AddRange(Enumerable.Range(1, colCount).ToList().ConvertAll(n => new ReportColumn("right")));
+            columns.AddRange(Enumerable.Range(1, colCount).ToList().ConvertAll(n => new ReportColumn(new RightAlignment())));
 
             cells = new ReportCell[rowCount, colCount];
 

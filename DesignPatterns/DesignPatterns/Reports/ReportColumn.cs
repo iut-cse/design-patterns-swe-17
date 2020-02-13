@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using DesignPatterns.Reports.Alignments;
 
 namespace DesignPatterns.Reports
 {
     public class ReportColumn
     {
         private readonly List<ReportCell> cells;
-        public readonly string alignment;
+        public readonly IAlignment alignment;
         public int Width { get; private set; }
 
-        public ReportColumn(string alignment)
+        public ReportColumn(IAlignment alignment)
         {
             this.alignment = alignment;
             cells = new List<ReportCell>();
