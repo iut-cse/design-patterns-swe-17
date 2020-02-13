@@ -6,8 +6,8 @@ namespace DesignPatterns.Reports.Kpis
 {
     public abstract class Kpi : IKpi
     {
-        protected readonly IEnumerable<ClassInfo> classHours;
-        protected readonly DayOfWeek dayOfWeek;
+        private readonly IEnumerable<ClassInfo> classHours;
+        private readonly DayOfWeek dayOfWeek;
 
         protected Kpi(IEnumerable<ClassInfo> classHours
             , DayOfWeek dayOfWeek)
