@@ -87,7 +87,7 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                _kpi = new TotalClassDurationKpi(classHours, dow);
+                _kpi = new TotalPaymentKpi(classHours, dow);
                 var value = _kpi.Calculate();
                 cells[rowIndex, colIndex] = new ReportCell(value[department].ToString());
                 total += value[department];
