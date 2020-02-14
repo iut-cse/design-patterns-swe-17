@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DesignPatterns.Reports.Kpis;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace DesignPatterns.Reports
         private readonly List<string> departments;
         private readonly List<ClassInfo> classHours;
         private readonly string firstColumnAlignment;
+        private IKpi _kpi;
 
         public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment)
         {
@@ -85,9 +87,10 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
-                cells[rowIndex, colIndex] = new ReportCell(value.ToString());
-                total += value;
+                _kpi = new TotalClassDurationKpi(classHours, dow);
+                var value = _kpi.Calculate();
+                cells[rowIndex, colIndex] = new ReportCell(value[department].ToString());
+                total += value[department];
             }
             cells[rowIndex, colIndex] = new ReportCell(total.ToString());
         }
@@ -104,5 +107,7 @@ namespace DesignPatterns.Reports
             }
             cells[rowIndex, colIndex] = new ReportCell("Total");
         }
+
+
     }
 }

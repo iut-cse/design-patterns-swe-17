@@ -4,6 +4,6 @@ namespace DesignPatterns.Reports.Kpis
 {
     public interface IKpi
     {
-        IDictionary<string, double> Calculate();
+        KpiResult Calculate();
     }
 }
