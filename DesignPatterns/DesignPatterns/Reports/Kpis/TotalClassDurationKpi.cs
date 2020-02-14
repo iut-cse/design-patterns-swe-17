@@ -4,10 +4,8 @@ using System.Linq;
 
 namespace DesignPatterns.Reports.Kpis
 {
-    public class TotalClassDurationKpi :Kpi
+    public class TotalClassDurationKpi:Kpi
     {
-        private readonly IEnumerable<ClassInfo> classHours;
-        private readonly DayOfWeek dayOfWeek;
 
         public TotalClassDurationKpi(IEnumerable<ClassInfo> classHours
             , DayOfWeek dayOfWeek)
