@@ -15,7 +15,10 @@
             return instance;
         }
 
-        private ReportConfig() { }
+        private ReportConfig()
+        {
+            ColumnSeparator = "|";
+        }
 
         public string ColumnSeparator { get; set; }
     }

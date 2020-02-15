@@ -22,14 +22,15 @@ namespace DesignPatterns.Reports
 
         public void Render(StringBuilder builder)
         {
+            var columnSeparator = ReportConfig.GetInstance().ColumnSeparator;
             for (int r = 0; r < cells.GetLength(0); r++)
             {
-                builder.Append("|");
+                builder.Append(columnSeparator);
                 for (int c = 0; c < cells.GetLength(1); c++)
                 {
                     builder.Append(" ");
                     cells[r, c].Render(builder);
-                    builder.Append(" |");
+                    builder.Append($" {columnSeparator}");
                 }
                 builder.Append("\n");
             }
