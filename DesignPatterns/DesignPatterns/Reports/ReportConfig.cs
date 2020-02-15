@@ -6,15 +6,16 @@
 
         public static ReportConfig GetInstance()
         {
-            if (instance == null) 
-                instance = new ReportConfig();
+            lock (instance)
+            {
+                if (instance == null)
+                    instance = new ReportConfig();
+            }
 
             return instance;
         }
 
         private ReportConfig() { }
-
-        
 
         public string ColumnSeparator { get; set; }
     }
