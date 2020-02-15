@@ -2,14 +2,21 @@
 {
     public class ReportConfig
     {
+        private static readonly object instanceLock = new object();
         private static ReportConfig instance;
 
         public static ReportConfig GetInstance()
         {
-            lock (instance)
+            if (instance == null)
             {
-                if (instance == null)
-                    instance = new ReportConfig();
+                lock (instanceLock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new ReportConfig();
+                    }
+                }
+
             }
 
             return instance;
