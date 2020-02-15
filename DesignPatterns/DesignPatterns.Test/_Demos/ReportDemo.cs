@@ -11,6 +11,7 @@ namespace DesignPatterns.Test._Demos
         [Fact]
         void Demo()
         {
+            ReportConfig.GetInstance().ColumnSeparator = "::";
             var data = new List<ClassInfo>
             {
                 new ClassInfo("Physics", new DateTime(2020, 1, 20), 4),
