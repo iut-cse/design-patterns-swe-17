@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj": {}
+    "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj": {}
   },
   "projects": {
-    "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj": {
+    "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj",
+        "projectUniqueName": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj",
         "projectName": "DesignPatterns",
-        "projectPath": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj",
+        "projectPath": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj",
         "packagesPath": "/Users/mdarifulislam/.nuget/packages/",
-        "outputPath": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/obj/",
+        "outputPath": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

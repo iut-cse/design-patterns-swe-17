@@ -7293,11 +7293,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/DesignPatterns.Test.csproj",
+      "projectUniqueName": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/DesignPatterns.Test.csproj",
       "projectName": "DesignPatterns.Test",
-      "projectPath": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/DesignPatterns.Test.csproj",
+      "projectPath": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/DesignPatterns.Test.csproj",
       "packagesPath": "/Users/mdarifulislam/.nuget/packages/",
-      "outputPath": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/obj/",
+      "outputPath": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -7314,8 +7314,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj": {
-              "projectPath": "/Users/mdarifulislam/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj"
+            "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj": {
+              "projectPath": "/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns/DesignPatterns.csproj"
             }
           }
         }

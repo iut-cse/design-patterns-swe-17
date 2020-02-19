@@ -1,29 +1,60 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Reports/Kpis/TotalClassDurationKpi.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{72B132C5-3F6B-481E-A858-A038C1F746F2}|Default">
+  <MonoDevelop.Ide.ItemProperties.DesignPatterns.Test PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="DesignPatterns/Reports/ClassInfo.cs" Line="1" Column="1" />
-      <File FileName="DesignPatterns/Reports/AllDaysOfWeek.cs" Line="1" Column="1" />
-      <File FileName="DesignPatterns/Reports/Kpis/TotalClassDurationKpi.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns/Reports/ClassInfo.cs" Line="10" Column="43" />
+      <File FileName="DesignPatterns/Reports/AllDaysOfWeek.cs" />
+      <File FileName="DesignPatterns/Reports/Kpis/TotalClassDurationKpi.cs" Line="20" Column="6" />
+      <File FileName="../Tasks/02-implement-payment-per-hour-kpi.md" Line="2" Column="32" />
+      <File FileName="DesignPatterns/Reports/Kpis/TotalPaymentKpi.cs" Line="14" Column="1" />
+      <File FileName="DesignPatterns.Test/Reports/Kpis/TotalClassDurationKpiTest.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns.Test/Reports/Kpis/TotalPaymentKpiTest.cs" Line="14" Column="21" />
+      <File FileName="DesignPatterns/Reports/Kpis/IKpi.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns/Reports/Kpis/Kpi.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns/Reports/Kpis/KpiResult.cs" Line="1" Column="1" />
+      <File FileName="DesignPatterns/Reports/Kpis/PaymentPerHour.cs" Line="11" Column="42" />
+      <File FileName="DesignPatterns.Test/Reports/Kpis/PaymentPerHour.cs" Line="17" Column="50" />
+      <File FileName="DesignPatterns/Reports/ReportTable.cs" Line="19" Column="84" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DesignPatterns" expanded="True">
+            <Node name="Tasks" expanded="True" />
             <Node name="DesignPatterns" expanded="True">
               <Node name="Reports" expanded="True">
                 <Node name="Kpis" expanded="True">
-                  <Node name="TotalClassDurationKpi.cs" selected="True" />
+                  <Node name="PaymentPerHour.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
-            <Node name="DesignPatterns.Test" expanded="True" />
+            <Node name="DesignPatterns.Test" expanded="True">
+              <Node name="_Demos" expanded="True" />
+              <Node name="Reports" expanded="True">
+                <Node name="Kpis" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
           <Node name="DesignPatterns" expanded="True">
-            <Node name="DesignPatterns.Test" selected="True" />
+            <Node name="DesignPatterns.Test" expanded="True">
+              <Node name="DesignPatterns" expanded="True">
+                <Node name="Test" expanded="True">
+                  <Node name="Reports" expanded="True">
+                    <Node name="Kpis" expanded="True">
+                      <Node name="PaymentPerHour" expanded="True" />
+                      <Node name="TotalClassDurationKpiTest" expanded="True" />
+                      <Node name="TotalPaymentKpiTest" expanded="True">
+                        <Node name="Monday" selected="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -32,7 +63,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" relfile="DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" line="17" column="1" />
+      <Breakpoint file="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/DesignPatterns/DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" relfile="DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" line="18" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
