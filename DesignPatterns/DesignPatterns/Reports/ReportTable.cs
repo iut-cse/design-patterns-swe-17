@@ -68,14 +68,14 @@ namespace DesignPatterns.Reports
         {
             var colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Total");
-            var grandTotal = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
                 var value = kpi.Calculate(classHours, ch => ch.date.DayOfWeek == dow);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
-                grandTotal += value;
             }
+
+            var grandTotal = kpi.Calculate(classHours, ci => true);
             cells[rowIndex, colIndex] = new ReportCell(grandTotal.ToString());
         }
 
@@ -84,14 +84,13 @@ namespace DesignPatterns.Reports
             var colIndex = 0;
             var department = departments[rowIndex - 1];
             cells[rowIndex, colIndex] = new ReportCell(department);
-            var total = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
                 var value = kpi.Calculate(classHours, ch => ch.date.DayOfWeek == dow && ch.department == department);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
-                total += value;
             }
+            var total = kpi.Calculate(classHours, ch => ch.department == department);
             cells[rowIndex, colIndex] = new ReportCell(total.ToString());
         }
 
