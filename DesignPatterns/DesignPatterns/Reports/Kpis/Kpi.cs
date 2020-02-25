@@ -6,19 +6,16 @@ namespace DesignPatterns.Reports.Kpis
 {
     public abstract class Kpi : IKpi
     {
-        protected readonly IEnumerable<ClassInfo> classHours;
         protected readonly DayOfWeek dayOfWeek;
 
-        protected Kpi(IEnumerable<ClassInfo> classHours
-            , DayOfWeek dayOfWeek)
+        protected Kpi(DayOfWeek dayOfWeek)
         {
-            this.classHours = classHours;
             this.dayOfWeek = dayOfWeek;
         }
 
-        public KpiResult Calculate()
+        public KpiResult Calculate(IEnumerable<ClassInfo> data)
         {
-            var filtered = classHours.Where(ci => ci.date.DayOfWeek == dayOfWeek);
+            var filtered = data.Where(ci => ci.date.DayOfWeek == dayOfWeek);
             var grouped = filtered.GroupBy(ci => ci.department);
             var mapped = GroupToDictionary(grouped);
             var result = new KpiResult(mapped);

@@ -6,9 +6,8 @@ namespace DesignPatterns.Reports.Kpis
 {
     public class TotalPaymentKpi : Kpi
     {
-        public TotalPaymentKpi(IEnumerable<ClassInfo> classHours
-            , DayOfWeek dayOfWeek)
-            :base (classHours, dayOfWeek)
+        public TotalPaymentKpi(DayOfWeek dayOfWeek)
+            : base(dayOfWeek)
         {
         }
 

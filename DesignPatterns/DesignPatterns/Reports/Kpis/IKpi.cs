@@ -1,7 +1,9 @@
-﻿namespace DesignPatterns.Reports.Kpis
+﻿using System.Collections.Generic;
+
+namespace DesignPatterns.Reports.Kpis
 {
     public interface IKpi
     {
-        KpiResult Calculate();
+        KpiResult Calculate(IEnumerable<ClassInfo> data);
     }
 }

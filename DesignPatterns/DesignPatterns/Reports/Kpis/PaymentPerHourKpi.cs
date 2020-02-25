@@ -6,7 +6,8 @@ namespace DesignPatterns.Reports.Kpis
 {
     public class PaymentPerHourKpi : Kpi
     {
-        public PaymentPerHourKpi(IEnumerable<ClassInfo> classHours, DayOfWeek dayOfWeek) : base(classHours, dayOfWeek)
+        public PaymentPerHourKpi(DayOfWeek dayOfWeek)
+            : base(dayOfWeek)
         {
         }
 
