@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DesignPatterns.Reports.Kpis;
 
 namespace DesignPatterns.Reports
 {
@@ -9,11 +10,13 @@ namespace DesignPatterns.Reports
         private List<ReportColumn> columns;
         private ReportCell[,] cells;
         private readonly List<string> departments;
+        private readonly IKpi kpi;
         private readonly List<ClassInfo> classHours;
         private readonly string firstColumnAlignment;
 
-        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment)
+        public ReportTable(IKpi kpi, List<ClassInfo> classHours, string firstColumnAlignment)
         {
+            this.kpi = kpi;
             this.classHours = classHours;
             this.firstColumnAlignment = firstColumnAlignment;
             this.departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
@@ -69,7 +72,7 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow).Sum(ch => ch.durationHours);
+                var value = kpi.Calculate(classHours, ch => ch.date.DayOfWeek == dow);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
                 grandTotal += value;
             }
@@ -85,7 +88,7 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
+                var value = kpi.Calculate(classHours, ch => ch.date.DayOfWeek == dow && ch.department == department);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
                 total += value;
             }

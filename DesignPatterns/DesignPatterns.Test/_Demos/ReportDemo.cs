@@ -1,7 +1,6 @@
 ﻿using DesignPatterns.Reports;
-using System;
-using System.Collections.Generic;
 using System.Text;
+using DesignPatterns.Reports.Kpis;
 using DesignPatterns.Test.Reports.Kpis;
 using Xunit;
 
@@ -13,7 +12,7 @@ namespace DesignPatterns.Test._Demos
         void Demo()
         {
             var data = TestData.CreateData();
-            var table = new ReportTable(data, "left");
+            var table = new ReportTable(new PaymentPerHourKpi(),  data, "left");
             var sb = new StringBuilder();
             table.Render(sb);
             new OutputFile().Write(sb.ToString());
