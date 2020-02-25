@@ -22,10 +22,10 @@ namespace DesignPatterns.Reports
 
         public void Render(StringBuilder builder)
         {
-            for (int r = 0; r < cells.GetLength(0); r++)
+            for (var r = 0; r < cells.GetLength(0); r++)
             {
                 builder.Append("|");
-                for (int c = 0; c < cells.GetLength(1); c++)
+                for (var c = 0; c < cells.GetLength(1); c++)
                 {
                     builder.Append(" ");
                     cells[r, c].Render(builder);
@@ -54,7 +54,7 @@ namespace DesignPatterns.Reports
 
             for (var rowIndex = 0; rowIndex < rowCount; rowIndex++)
             {
-                for (int colIndex = 0; colIndex < colCount; colIndex++)
+                for (var colIndex = 0; colIndex < colCount; colIndex++)
                 {
                     columns[colIndex].AddCell(cells[rowIndex, colIndex]);
                 }
@@ -63,7 +63,7 @@ namespace DesignPatterns.Reports
 
         private void BuildTotalRow(int rowIndex)
         {
-            int colIndex = 0;
+            var colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Total");
             var grandTotal = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
@@ -78,7 +78,7 @@ namespace DesignPatterns.Reports
 
         private void BuildDepartmentRow(int rowIndex)
         {
-            int colIndex = 0;
+            var colIndex = 0;
             var department = departments[rowIndex - 1];
             cells[rowIndex, colIndex] = new ReportCell(department);
             var total = 0.0;
@@ -94,7 +94,7 @@ namespace DesignPatterns.Reports
 
         private void BuildHeaderRow()
         {
-            int rowIndex = 0;
+            var rowIndex = 0;
             var colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Department");
 
