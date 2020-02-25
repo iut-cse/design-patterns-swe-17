@@ -10,11 +10,10 @@ namespace DesignPatterns.Test.Reports.Kpis
         public void Monday()
         {
             var data = TestData.CreateData();
-            var tch = new TotalPaymentKpi(DayOfWeek.Monday);
-            var output = tch.Calculate(data);
+            var tch = new TotalPaymentKpi();
+            var actual = tch.Calculate(data, ci => ci.date.DayOfWeek == DayOfWeek.Monday && ci.department == "Physics");
 
-            Assert.Equal(5200, output["Physics"]);
-            Assert.Equal(2100, output["Bangla"]);
+            Assert.Equal(5200, actual);
         }
     }
 }

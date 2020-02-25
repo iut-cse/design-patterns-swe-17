@@ -6,22 +6,12 @@ namespace DesignPatterns.Reports.Kpis
 {
     public abstract class Kpi : IKpi
     {
-        protected readonly DayOfWeek dayOfWeek;
-
-        protected Kpi(DayOfWeek dayOfWeek)
+        public double Calculate(List<ClassInfo> data, Predicate<ClassInfo> filter)
         {
-            this.dayOfWeek = dayOfWeek;
+            var filtered = data.FindAll(filter);
+            return KpiFunction(filtered);
         }
 
-        public KpiResult Calculate(IEnumerable<ClassInfo> data)
-        {
-            var filtered = data.Where(ci => ci.date.DayOfWeek == dayOfWeek);
-            var grouped = filtered.GroupBy(ci => ci.department);
-            var mapped = GroupToDictionary(grouped);
-            var result = new KpiResult(mapped);
-            return result;
-        }
-
-        protected abstract IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped);
+        protected abstract double KpiFunction(List<ClassInfo> filtered);
     }
 }

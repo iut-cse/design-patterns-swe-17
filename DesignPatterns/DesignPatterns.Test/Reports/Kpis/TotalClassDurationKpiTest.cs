@@ -12,23 +12,10 @@ namespace DesignPatterns.Test.Reports.Kpis
         public void Monday()
         {
             var data = TestData.CreateData();
-            var tch = new TotalClassDurationKpi(DayOfWeek.Monday);
-            var output = tch.Calculate(data);
+            var tch = new TotalClassDurationKpi();
+            var actual = tch.Calculate(data, ci => ci.date.DayOfWeek == DayOfWeek.Monday && ci.department == "Physics");
 
-            Assert.Equal(9, output["Physics"]);
-            Assert.Equal(6, output["Bangla"]);
-        }
-
-
-        [Fact]
-        public void Tuesday()
-        {
-            var data = TestData.CreateData();
-            var tch = new TotalClassDurationKpi(DayOfWeek.Tuesday);
-            var output = tch.Calculate(data);
-
-            Assert.Equal(5, output["Physics"]);
-            Assert.Equal(2, output["Chemistry"]);
+            Assert.Equal(9, actual);
         }
     }
 }
