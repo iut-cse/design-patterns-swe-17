@@ -11,15 +11,15 @@ namespace DesignPatterns.Reports
         private ReportCell[,] cells;
         private readonly List<string> departments;
         private readonly IKpi kpi;
-        private readonly List<ClassInfo> classHours;
+        private readonly List<ClassInfo> classInfos;
         private readonly string firstColumnAlignment;
 
-        public ReportTable(IKpi kpi, List<ClassInfo> classHours, string firstColumnAlignment)
+        public ReportTable(IKpi kpi, List<ClassInfo> classInfos, string firstColumnAlignment)
         {
             this.kpi = kpi;
-            this.classHours = classHours;
+            this.classInfos = classInfos;
             this.firstColumnAlignment = firstColumnAlignment;
-            this.departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
+            this.departments = classInfos.ConvertAll(ci => ci.department).Distinct().ToList();
             BuildComponents();
         }
 
@@ -71,11 +71,11 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = kpi.Calculate(classHours, ch => ch.date.DayOfWeek == dow);
+                var value = kpi.Calculate(classInfos, ci => ci.date.DayOfWeek == dow);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
             }
 
-            var grandTotal = kpi.Calculate(classHours, ci => true);
+            var grandTotal = kpi.Calculate(classInfos, ci => true);
             cells[rowIndex, colIndex] = new ReportCell(grandTotal.ToString());
         }
 
@@ -87,10 +87,10 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = kpi.Calculate(classHours, ch => ch.date.DayOfWeek == dow && ch.department == department);
+                var value = kpi.Calculate(classInfos, ci => ci.date.DayOfWeek == dow && ci.department == department);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
             }
-            var total = kpi.Calculate(classHours, ch => ch.department == department);
+            var total = kpi.Calculate(classInfos, ci => ci.department == department);
             cells[rowIndex, colIndex] = new ReportCell(total.ToString());
         }
 
