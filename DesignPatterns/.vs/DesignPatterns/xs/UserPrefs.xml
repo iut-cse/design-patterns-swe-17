@@ -1,6 +1,6 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{72B132C5-3F6B-481E-A858-A038C1F746F2}|Default">
   <MonoDevelop.Ide.ItemProperties.DesignPatterns.Test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Reports/ReportTable.cs">
     <Files>
       <File FileName="DesignPatterns/Reports/ClassInfo.cs" Line="10" Column="43" />
       <File FileName="DesignPatterns/Reports/AllDaysOfWeek.cs" />
@@ -14,7 +14,7 @@
       <File FileName="DesignPatterns/Reports/Kpis/KpiResult.cs" Line="1" Column="1" />
       <File FileName="DesignPatterns/Reports/Kpis/PaymentPerHour.cs" Line="11" Column="42" />
       <File FileName="DesignPatterns.Test/Reports/Kpis/PaymentPerHour.cs" Line="17" Column="50" />
-      <File FileName="DesignPatterns/Reports/ReportTable.cs" Line="19" Column="84" />
+      <File FileName="DesignPatterns/Reports/ReportTable.cs" Line="91" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,9 +23,8 @@
             <Node name="Tasks" expanded="True" />
             <Node name="DesignPatterns" expanded="True">
               <Node name="Reports" expanded="True">
-                <Node name="Kpis" expanded="True">
-                  <Node name="PaymentPerHour.cs" selected="True" />
-                </Node>
+                <Node name="Kpis" expanded="True" />
+                <Node name="ReportTable.cs" selected="True" />
               </Node>
             </Node>
             <Node name="DesignPatterns.Test" expanded="True">
