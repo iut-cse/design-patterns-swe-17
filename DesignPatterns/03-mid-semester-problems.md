@@ -29,6 +29,11 @@ Additionally, Some people prefer to keep their data as base-64 encoding.
 
 These conversions of the data file can be done in any sequence and the same conversion can be applied multiple times. 
 
+Implementation details:
+* Encrypt: change all upper case characters to lower case.
+* Compress: remove the last two characters if the total length is 3 or more. Keep as it is otherwise.
+* Encode: surround the string with parentheses.
+
 ## Problem 3
 The users of “save the animals” can save their preferences.
 To implement this, you need to write a `Preference` class with the following considerations:

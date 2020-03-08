@@ -3,7 +3,7 @@ using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
-    public class Problem1Test
+    public class MidProblem1Test
     {
         [Fact]
         void Punch()
