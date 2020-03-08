@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{96835B1D
 		..\Tasks\01-use-kpi-in-report-table.md = ..\Tasks\01-use-kpi-in-report-table.md
 		..\Tasks\02-implement-payment-per-hour-kpi.md = ..\Tasks\02-implement-payment-per-hour-kpi.md
 		03-mid-semester-problem.md = 03-mid-semester-problem.md
+		..\Tasks\03-mid-semester-problems.md = ..\Tasks\03-mid-semester-problems.md
 	EndProjectSection
 EndProject
 Global
