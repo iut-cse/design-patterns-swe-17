@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DesignPatterns.Reports.Kpis;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -85,7 +86,9 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
+                var tch = new PaymentPerHrKPI(classHours,dow);
+                var output = tch.Calculate();
+                var value = output[department];
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
                 total += value;
             }
