@@ -24,7 +24,7 @@ namespace DesignPatterns.MidSemester
         {
             this.stat = stat;
         }
-        public string conversion(string text)
+        public virtual string conversion(string text)
         {
             return stat.conversion(text);
         }
@@ -34,7 +34,7 @@ namespace DesignPatterns.MidSemester
         public Encryption(IStatistics stat):base(stat)
         {   
         }
-        public new string conversion(string text)
+         public override string conversion(string text)
         {
             return base.conversion(text).ToLower();
         }
@@ -45,7 +45,7 @@ namespace DesignPatterns.MidSemester
         public Compression(IStatistics stat) : base(stat)
         {
         }
-        public new string conversion(string text)
+        public override string conversion(string text)
         {
             if (text.Length<3)
             {
@@ -63,7 +63,7 @@ namespace DesignPatterns.MidSemester
         public base64encodeing(IStatistics stat) : base(stat)
         {
         }
-        public new string conversion(string text)
+        public override string conversion(string text)
         {
             return "("+ base.conversion(text)+ ")";
         }

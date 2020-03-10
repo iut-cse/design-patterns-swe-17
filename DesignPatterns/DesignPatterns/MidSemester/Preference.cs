@@ -26,7 +26,7 @@
             
             return preference;
         }
-        public void setPreference(string key, string value)
+        public void setPreference(string value, string key)
         {
             this.key = key;
             this.value = value;
