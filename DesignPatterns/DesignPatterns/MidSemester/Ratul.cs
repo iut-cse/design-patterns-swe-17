@@ -15,6 +15,7 @@ namespace DesignPatterns.MidSemester
             // However, there is a thing called `yield return` in C#.
             // Using it would be "cool"
             // Make sure you understand it if you choose to use it.
+            //making changes
             return null;
         }
     }
