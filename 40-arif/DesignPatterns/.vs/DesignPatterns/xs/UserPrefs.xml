@@ -1,13 +1,40 @@
-﻿<Properties StartupConfiguration="{1C2C8799-0EA7-4668-9BDF-7055526A1FFA}|Default">
-  <MonoDevelop.Ide.ItemProperties.DesignPatterns PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/_00_Mohayemin/Reports/Program.cs">
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{72B132C5-3F6B-481E-A858-A038C1F746F2}|Default">
+  <MonoDevelop.Ide.ItemProperties.DesignPatterns.Test PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/MidSemester/Preference.cs">
     <Files>
-      <File FileName="DesignPatterns/_00_Mohayemin/Reports/Program.cs" Line="13" Column="28" />
+      <File FileName="DesignPatterns.Test/MidSemester/MidProblem3Test.cs" Line="15" Column="43" IsPinned="True" />
+      <File FileName="DesignPatterns.Test/MidSemester/MidProblem2Test.cs" Line="14" Column="1" IsPinned="True" />
+      <File FileName="DesignPatterns/MidSemester/Ratul.cs" Line="18" Column="1" />
+      <File FileName="DesignPatterns/MidSemester/Preference.cs" Line="8" Column="18" />
+      <File FileName="DesignPatterns.Test/MidSemester/MidProblem1Test.cs" Line="11" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DesignPatterns" expanded="True" />
+          <Node name="DesignPatterns" expanded="True">
+            <Node name="DesignPatterns" expanded="True">
+              <Node name="MidSemester" expanded="True">
+                <Node name="Preference.cs" selected="True" />
+              </Node>
+              <Node name="Reports" expanded="True">
+                <Node name="Kpis" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="DesignPatterns.Test" expanded="True">
+              <Node name="MidSemester" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="DesignPatterns" expanded="True" selected="True">
+            <Node name="DesignPatterns.Test" expanded="True">
+              <Node name="DesignPatterns" expanded="True">
+                <Node name="Test" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
@@ -15,7 +42,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/40-arif/DesignPatterns/DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" relfile="DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" line="17" column="1" />
+      <Breakpoint file="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/40-arif/DesignPatterns/DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" relfile="DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" line="18" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
