@@ -1,0 +1,30 @@
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Reports/Kpis/PaymentPerHour.cs">
+    <Files>
+      <File FileName="DesignPatterns/Reports/Kpis/PaymentPerHour.cs" Line="10" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DesignPatterns" expanded="True">
+            <Node name="Tasks" expanded="True" />
+            <Node name="DesignPatterns" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>DesignPatterns/DesignPatterns.csproj</String>
+    <String>DesignPatterns.Test/DesignPatterns.Test.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/40-arif/DesignPatterns/DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" relfile="DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" line="17" column="1" />
+      <Breakpoint file="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/40-arif/DesignPatterns/DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" relfile="DesignPatterns.Test/Reports/Kpis/b7ctd86f.y2h~" line="18" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
