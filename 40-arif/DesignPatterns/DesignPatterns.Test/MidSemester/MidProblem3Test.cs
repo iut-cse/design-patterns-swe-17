@@ -18,6 +18,9 @@ namespace DesignPatterns.Test.MidSemester
             // set value "567" with key "abc" in instance2.
             // get value with key "abc" from instance1.
             // assert
+            instance1.setPreference("abc", "567");
+            abcValue = instance1.getPreference("abc"); // get with key "abc";
+            Assert.Equal("567", abcValue);
         }
     }
 }
