@@ -1,14 +1,12 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DesignPatterns/Reports/Kpis/PaymentPerHour.cs">
-    <Files>
-      <File FileName="DesignPatterns/Reports/Kpis/PaymentPerHour.cs" Line="10" Column="10" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DesignPatterns" expanded="True">
-            <Node name="Tasks" expanded="True" />
-            <Node name="DesignPatterns" selected="True" />
+            <Node name="Tasks" expanded="True">
+              <Node name="/Users/mdarifulislam/Documents/SWE/3.1/Design Pattern/design-patterns-swe-17/40-arif/Tasks/01-use-kpi-in-report-table.md" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
