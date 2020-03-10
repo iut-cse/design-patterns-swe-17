@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using DesignPatterns.MidSemester;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -8,7 +9,8 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            IStatSaver f1 = new GamerStat();
+            var converted = f1.statistics(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +18,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            IStatSaver f1 = new EncryptionDecor(new CompressionDecor(new GamerStat()));
+            var converted = f1.statistics(original); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,15 +27,18 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            IStatSaver f1 = new CompressionDecor(new EncoderDecor(new CompressionDecor(new EncryptionDecor(new GamerStat()))));
+            var converted = f1.statistics(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
         [Fact]
         void CompressThenEncodeThenEncrypt()
         {
-            // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            IStatSaver f1 = new EncryptionDecor(new EncoderDecor(new CompressionDecor(new GamerStat())));
+            var converted = f1.statistics(original); // do the convertion
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }
