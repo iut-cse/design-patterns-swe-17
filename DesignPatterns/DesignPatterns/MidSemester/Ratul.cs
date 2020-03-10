@@ -7,7 +7,7 @@ namespace DesignPatterns.MidSemester
     {
         public ICloseAction CurrentCloseAction;
         public DistantAction CurrentDistantAction;
-        public List<string> ActionList = new List<string>();
+        
 
         public Ratul(ICloseAction currentCloseAction,DistantAction currentDistantAction)
         {
@@ -16,8 +16,7 @@ namespace DesignPatterns.MidSemester
         }
 
         public string ExecuteCloseAction()
-        {
-
+        { 
             return CurrentCloseAction.DoAction();
         }
 
@@ -28,11 +27,7 @@ namespace DesignPatterns.MidSemester
             // Using it would be "cool"
             // Make sure you understand it if you choose to use it.
 
-            ActionList.Add(CurrentDistantAction.Move());
-            ActionList.Add(CurrentDistantAction.Grab());
-            ActionList.Add(CurrentDistantAction.Hit());
-
-            return ActionList;
+            return CurrentDistantAction.AllDistantAction();
         }
     }
 }
