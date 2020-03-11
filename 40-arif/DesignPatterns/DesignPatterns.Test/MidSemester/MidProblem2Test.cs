@@ -9,9 +9,9 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var source = new FileDataSource(original);
 
-            var converted = source.writeData(original); // Do the "No Change" conversion.
+            DataDecorator plain = new Decorator(original);
+            string converted = plain.getData(); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -20,14 +20,11 @@ namespace DesignPatterns.Test.MidSemester
         {
             var original = "Top Score is 305";
 
-            IDataSource source = new FileDataSource(original);
+            DataDecorator pl = new Decorator(original);
 
-            source = new CompressionDecorator(source);
-            source.writeData(original);
-            source = new EncryptionDecorator(source);
-
-
-            var converted = source.writeData(original); // compress then encryppt.
+            pl = new CompressionDecorator(pl);
+            pl = new EncryptionDecorator(pl);
+            string converted =pl.getData(); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
@@ -35,7 +32,14 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+
+            DataDecorator pl = new Decorator(original);
+
+            pl = new EncryptionDecorator(pl);
+            pl = new CompressionDecorator(pl);
+            pl = new EncodeDecorator(pl);
+            pl = new CompressionDecorator(pl);
+            var converted = pl.getData(); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
@@ -43,7 +47,15 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncodeThenEncrypt()
         {
             // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+
+            DataDecorator pl = new Decorator(original);
+
+            pl = new CompressionDecorator(pl);
+            pl = new EncodeDecorator(pl);
+            pl = new EncryptionDecorator(pl);
+            string converted = pl.getData(); // compress then encryppt.
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }

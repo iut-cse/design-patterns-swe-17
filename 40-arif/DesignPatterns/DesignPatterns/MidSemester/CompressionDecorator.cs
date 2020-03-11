@@ -1,34 +1,21 @@
 ﻿namespace DesignPatterns.MidSemester
 {
-    public class CompressionDecorator : DataSourceDecorator
+    public class CompressionDecorator : DataDecorator
     {
         public string data;
-        public CompressionDecorator(IDataSource source) : base(source)
+        public CompressionDecorator(DataDecorator source)
         {
-            if (source.readData().Length >= 3)
+            if (source.getData().Length >= 3)
             {
-                this.data = source.readData().Remove(source.readData().Length - 2);
+                this.data = source.getData().Remove(source.getData().Length - 2);
             }
             else
             {
-                this.data = source.readData();
+                this.data = source.getData();
             }
         }
 
-        public string writeData(string path)
-        {
-            if (source.readData().Length >= 3)
-            {
-                this.data = source.readData().Remove(source.readData().Length - 2);
-            }
-            else
-            {
-                this.data = source.readData();
-            }
-            return data;
-        }
-
-        public string readData()
+        public override string getData()
         {
             return this.data;
         }

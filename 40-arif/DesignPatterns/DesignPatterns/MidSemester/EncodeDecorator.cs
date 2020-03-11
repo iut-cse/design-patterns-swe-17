@@ -1,11 +1,11 @@
 ﻿namespace DesignPatterns.MidSemester
 {
-    public class EncryptionDecorator : DataDecorator
+    public class EncodeDecorator : DataDecorator
     {
         public string data;
-        public EncryptionDecorator(DataDecorator source)
+        public EncodeDecorator(DataDecorator source)
         {
-            this.data = source.getData().ToLower();
+            this.data = "("+source.getData()+")";
         }
 
         public override string getData()
