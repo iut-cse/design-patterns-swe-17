@@ -2,23 +2,18 @@
 {
     public class CompressText : Statistics
     {
-        string text;
-        public CompressText(Statistics stat)
+
+        public CompressText(IStatistics component) : base(component)
         {
-            if (stat.getString().Length >= 3)
-            {
-                this.text = stat.getString().Remove(stat.getString().Length - 2);
-            }
-            else
-            {
-                this.text = stat.getString();
-            }
-            
         }
 
-        public override string getString()
+        protected override string DoOperation(string data)
         {
-            return text;
+            if (data.Length >= 3)
+            {
+                data = data.Remove(data.Length - 2);
+            }
+            return data;
         }
     }
 }

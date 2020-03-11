@@ -1,16 +1,12 @@
 ﻿namespace DesignPatterns.MidSemester
 {
-    public class PlainText : Statistics
+    public class PlainText : IStatistics
     {
-        string text;
-        public PlainText(string text)
+
+        public string Convert(string data)
         {
-            this.text = text;
+            return data; 
         }
 
-        public override string getString()
-        {
-            return text;
-        }
     }
 }

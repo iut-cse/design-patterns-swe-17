@@ -2,15 +2,13 @@
 {
     public class EncryptText : Statistics
     {
-        string text;
-        public EncryptText(Statistics stat)
+        public EncryptText(IStatistics component) : base(component)
         {
-            this.text = stat.getString().ToLower();
         }
 
-        public override string getString()
+        protected override string DoOperation(string data)
         {
-            return text;
+            return data.ToLower();
         }
     }
 }

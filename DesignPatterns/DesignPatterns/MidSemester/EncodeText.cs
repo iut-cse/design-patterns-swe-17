@@ -2,15 +2,13 @@
 {
     public class EncodeText : Statistics
     {
-        string text;
-        public EncodeText(Statistics stat)
+        public EncodeText(IStatistics component) : base(component)
         {
-            this.text = "("+stat.getString()+")";  
         }
 
-        public override string getString()
+        protected override string DoOperation(string data)
         {
-            return text;
+            return "(" + data + ")";
         }
     }
 }

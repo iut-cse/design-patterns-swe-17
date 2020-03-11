@@ -10,7 +10,7 @@ namespace DesignPatterns.MidSemester
         private static readonly object _lock = new object();
 
         private Preference() {}
-        public static Preference getInstance()
+        public static Preference GetInstance()
         {
             if (uniqueInstance == null)
             {
@@ -26,7 +26,7 @@ namespace DesignPatterns.MidSemester
             return uniqueInstance;
         }
 
-        public void setPreference(string key, string value)
+        public void SetPreference(string key, string value)
         {
             if (preference.ContainsKey(key))
             {
@@ -36,7 +36,7 @@ namespace DesignPatterns.MidSemester
             
         }
 
-        public string getPreference(string key)
+        public string GetPreference(string key)
         {
             return preference[key];
         }
