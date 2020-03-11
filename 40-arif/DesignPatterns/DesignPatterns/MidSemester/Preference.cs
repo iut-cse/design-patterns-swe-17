@@ -5,8 +5,6 @@ namespace DesignPatterns.MidSemester
 {
     public class Preference
     {
-        // TODO: implement
-
         private static Preference instance;
 
         string serverIp = "localhost";
