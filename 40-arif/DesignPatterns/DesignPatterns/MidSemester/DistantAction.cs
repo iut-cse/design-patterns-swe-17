@@ -11,7 +11,7 @@ namespace DesignPatterns.MidSemester
             yield return hit();
         }
 
-        private string move()
+        public string move()
         {
             return "move";
         }

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using DesignPatterns.MidSemester;
+using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -8,7 +9,9 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            var source = new FileDataSource(original);
+
+            var converted = source.writeData(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +19,15 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+
+            IDataSource source = new FileDataSource(original);
+
+            source = new CompressionDecorator(source);
+            source.writeData(original);
+            source = new EncryptionDecorator(source);
+
+
+            var converted = source.writeData(original); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
