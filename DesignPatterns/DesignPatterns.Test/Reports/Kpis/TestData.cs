@@ -18,6 +18,9 @@ namespace DesignPatterns.Test.Reports.Kpis
                 new ClassInfo("English", new DateTime(2020, 1, 23), 6, 700), // Thursday
                 new ClassInfo("English", new DateTime(2020, 1, 16), 1, 10), // Thursday
                 new ClassInfo("Bangla", new DateTime(2020, 1, 13), 6, 2100), // Monday
+                new ClassInfo("ICT", new DateTime(2020, 1, 13), 6, 2100), // Monday
+                new ClassInfo("ICT", new DateTime(2020, 1, 13), 6, 2100), // Monday
+                new ClassInfo("ICT", new DateTime(2020, 1, 13), 6, 2100), // Monday
             };
         }
     }

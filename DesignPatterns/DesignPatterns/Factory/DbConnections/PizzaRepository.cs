@@ -9,6 +9,7 @@ namespace DesignPatterns.Factory.DbConnections
 
         public PizzaRepository(IDbConnection connection)
         {
+
             this.connection = connection;
         }
 

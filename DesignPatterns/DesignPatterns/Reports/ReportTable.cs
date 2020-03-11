@@ -85,9 +85,10 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
+                var value = classHours.Where(ch => ch.date.DayOfWeek == dow && ch.department == department).Sum(ch => ch.durationHours);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
                 total += value;
+
             }
             cells[rowIndex, colIndex] = new ReportCell(total.ToString());
         }
