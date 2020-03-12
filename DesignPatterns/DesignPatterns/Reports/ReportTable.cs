@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Reports.Kpis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,17 @@ namespace DesignPatterns.Reports
         private readonly List<string> departments;
         private readonly List<ClassInfo> classHours;
         private readonly string firstColumnAlignment;
+        private KpiType kpiType;
         private IKpi _kpi;
 
-        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment)
+        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment,KpiType kpiType, DayOfWeek dow)
         {
             this.classHours = classHours;
             this.firstColumnAlignment = firstColumnAlignment;
             this.departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
             BuildComponents();
+            //this.kpiType = kpiType;
+            this._kpi = createKpi(kpiType, dow);
         }
 
         public void Render(StringBuilder builder)
@@ -87,7 +91,7 @@ namespace DesignPatterns.Reports
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                _kpi = new TotalPaymentKpi(classHours, dow);
+                //_kpi = createKpi(kpiType, dow);
                 var value = _kpi.Calculate();
                 cells[rowIndex, colIndex] = new ReportCell(value[department].ToString());
                 total += value[department];
@@ -106,6 +110,25 @@ namespace DesignPatterns.Reports
                 cells[rowIndex, colIndex] = new ReportCell(AllDaysOfWeek.FromMonday[colIndex - 1].ToString());
             }
             cells[rowIndex, colIndex] = new ReportCell("Total");
+        }
+
+        private IKpi createKpi(KpiType kpitype, DayOfWeek DOW)
+        {   
+            
+            if(kpitype == KpiType.TOTALCLASSDURATION)
+            {
+                return new TotalClassDurationKpi(classHours, DOW);
+            }
+            else if(kpitype == KpiType.TOTALPAYMENT)
+            {
+                return new TotalPaymentKpi(classHours, DOW);
+            }
+            else if(kpitype == KpiType.PAYMENTPERHOUR)
+            {
+                return new PaymentPerHourKpi(classHours, DOW);
+            }
+            return new PaymentPerHourKpi(classHours,DOW);
+            
         }
 
 

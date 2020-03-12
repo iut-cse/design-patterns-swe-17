@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Reports;
+using DesignPatterns.Reports.Kpis;
 using DesignPatterns.Test.Reports.Kpis;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace DesignPatterns.Test._Demos
                 new ClassInfo("English", new DateTime(2020, 1, 23), 6),
                 new ClassInfo("English", new DateTime(2020, 1, 16), 1),
             };*/
-            ReportTable table = new ReportTable(data, "left");
+            ReportTable table = new ReportTable(data, "left", KpiType.PAYMENTPERHOUR,DayOfWeek.Monday);
             StringBuilder sb = new StringBuilder();
             table.Render(sb);
             new OutputFile().Write(sb.ToString());

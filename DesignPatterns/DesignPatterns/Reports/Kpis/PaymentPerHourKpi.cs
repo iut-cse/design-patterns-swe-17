@@ -1,13 +1,11 @@
-﻿using DesignPatterns.Reports;
-using DesignPatterns.Reports.Kpis;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DesignPatterns.Test.Reports.Kpis
+namespace DesignPatterns.Reports.Kpis
 {
-    class PaymentPerHourKpi : Kpi
+    public class PaymentPerHourKpi : Kpi
     {
         public PaymentPerHourKpi(IEnumerable<ClassInfo> classHours
             , DayOfWeek dayOfWeek)
@@ -18,7 +16,6 @@ namespace DesignPatterns.Test.Reports.Kpis
 
         protected override IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped)
         {
-            return grouped.ToDictionary(g => g.Key, g => g.Sum(ch => ch.paymentBdt / g.Sum(ch=> ch.durationHours)));
+            return grouped.ToDictionary(g => g.Key, g => g.Sum(ch => ch.paymentBdt / g.Sum(ch => ch.durationHours)));
         }
-    }
-}
+    }}
