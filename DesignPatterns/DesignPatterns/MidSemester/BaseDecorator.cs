@@ -4,7 +4,16 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class BaseDecorator
+    public class BaseDecorator : IStatistics
     {
+        protected IStatistics wrappee;
+        public BaseDecorator(IStatistics wrappee)
+        {
+            this.wrappee = wrappee;
+        }
+        public virtual string statistics(string data)
+        {
+            return wrappee.statistics(data);
+        }
     }
 }

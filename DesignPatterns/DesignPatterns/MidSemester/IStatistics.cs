@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    interface IStatistics
+    public interface IStatistics
     {
+        public string statistics(string data);
     }
 }

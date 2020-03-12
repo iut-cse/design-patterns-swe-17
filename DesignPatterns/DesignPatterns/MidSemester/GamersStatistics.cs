@@ -4,7 +4,11 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class GamersStatistics
+    public class GamersStatistics : IStatistics
     {
+        public string statistics(string data)
+        {
+            return data;
+        }
     }
 }
