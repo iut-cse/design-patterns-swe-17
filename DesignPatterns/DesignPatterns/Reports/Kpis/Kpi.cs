@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,24 +7,12 @@ namespace DesignPatterns.Reports.Kpis
 {
     public abstract class Kpi : IKpi
     {
-        private readonly IEnumerable<ClassInfo> classHours;
-        private readonly DayOfWeek dayOfWeek;
-
-        public Kpi(IEnumerable<ClassInfo> classHours
-            , DayOfWeek dayOfWeek)
+        public double Calculate(List<ClassInfo> data, Predicate<ClassInfo> filter)
         {
-            this.classHours = classHours;
-            this.dayOfWeek = dayOfWeek;
-        }
-        public KpiResult Calculate()
-        {
-            var filtered = classHours.Where(ch => ch.date.DayOfWeek == dayOfWeek);
-            var grouped = filtered.GroupBy(ch => ch.department);
-            var mapped = GroupToDictionary(grouped);
-            var result = new KpiResult(mapped);
-            return result;
+            var filtered = data.FindAll(filter);
+            return KpiFunction(filtered);
         }
 
-        protected abstract IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped);
+        protected abstract double KpiFunction(List<ClassInfo> filtered);
     }
 }

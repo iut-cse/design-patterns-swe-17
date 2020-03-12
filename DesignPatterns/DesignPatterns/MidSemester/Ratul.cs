@@ -22,7 +22,7 @@ namespace DesignPatterns.MidSemester
 
         public IEnumerable<string> ExecuteDistantAction()
         {
-            yield return distantAction.performDistantAction();
+            return distantAction.performDistantAction();
         }
     }
 }

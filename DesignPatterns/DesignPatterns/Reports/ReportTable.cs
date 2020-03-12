@@ -1,8 +1,7 @@
-﻿using DesignPatterns.Reports.Kpis;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DesignPatterns.Reports.Kpis;
 
 namespace DesignPatterns.Reports
 {
@@ -11,27 +10,25 @@ namespace DesignPatterns.Reports
         private List<ReportColumn> columns;
         private ReportCell[,] cells;
         private readonly List<string> departments;
-        private readonly List<ClassInfo> classHours;
+        private readonly IKpi kpi;
+        private readonly List<ClassInfo> classInfos;
         private readonly string firstColumnAlignment;
-        private KpiType kpiType;
-        private IKpi _kpi;
 
-        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment, KpiType kpiType, DayOfWeek dow)
+        public ReportTable(IKpi kpi, List<ClassInfo> classInfos, string firstColumnAlignment)
         {
-            this.classHours = classHours;
+            this.kpi = kpi;
+            this.classInfos = classInfos;
             this.firstColumnAlignment = firstColumnAlignment;
-            this.departments = classHours.ConvertAll(ch => ch.department).Distinct().ToList();
+            this.departments = classInfos.ConvertAll(ci => ci.department).Distinct().ToList();
             BuildComponents();
-            //this.kpiType = kpiType;
-            this._kpi = createKpi(kpiType, dow);
         }
 
         public void Render(StringBuilder builder)
         {
-            for (int r = 0; r < cells.GetLength(0); r++)
+            for (var r = 0; r < cells.GetLength(0); r++)
             {
                 builder.Append("|");
-                for (int c = 0; c < cells.GetLength(1); c++)
+                for (var c = 0; c < cells.GetLength(1); c++)
                 {
                     builder.Append(" ");
                     cells[r, c].Render(builder);
@@ -60,7 +57,7 @@ namespace DesignPatterns.Reports
 
             for (var rowIndex = 0; rowIndex < rowCount; rowIndex++)
             {
-                for (int colIndex = 0; colIndex < colCount; colIndex++)
+                for (var colIndex = 0; colIndex < colCount; colIndex++)
                 {
                     columns[colIndex].AddCell(cells[rowIndex, colIndex]);
                 }
@@ -69,39 +66,37 @@ namespace DesignPatterns.Reports
 
         private void BuildTotalRow(int rowIndex)
         {
-            int colIndex = 0;
+            var colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Total");
-            var grandTotal = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                var value = classHours.FindAll(ch => ch.date.DayOfWeek == dow).Sum(ch => ch.durationHours);
+                var value = kpi.Calculate(classInfos, ci => ci.date.DayOfWeek == dow);
                 cells[rowIndex, colIndex] = new ReportCell(value.ToString());
-                grandTotal += value;
             }
+
+            var grandTotal = kpi.Calculate(classInfos, ci => true);
             cells[rowIndex, colIndex] = new ReportCell(grandTotal.ToString());
         }
 
         private void BuildDepartmentRow(int rowIndex)
         {
-            int colIndex = 0;
+            var colIndex = 0;
             var department = departments[rowIndex - 1];
             cells[rowIndex, colIndex] = new ReportCell(department);
-            var total = 0.0;
             for (colIndex++; colIndex <= 7; colIndex++)
             {
                 var dow = AllDaysOfWeek.FromMonday[colIndex - 1];
-                //_kpi = createKpi(kpiType, dow);
-                var value = _kpi.Calculate();
-                cells[rowIndex, colIndex] = new ReportCell(value[department].ToString());
-                total += value[department];
+                var value = kpi.Calculate(classInfos, ci => ci.date.DayOfWeek == dow && ci.department == department);
+                cells[rowIndex, colIndex] = new ReportCell(value.ToString());
             }
+            var total = kpi.Calculate(classInfos, ci => ci.department == department);
             cells[rowIndex, colIndex] = new ReportCell(total.ToString());
         }
 
         private void BuildHeaderRow()
         {
-            int rowIndex = 0;
+            var rowIndex = 0;
             var colIndex = 0;
             cells[rowIndex, colIndex] = new ReportCell("Department");
 
@@ -111,26 +106,5 @@ namespace DesignPatterns.Reports
             }
             cells[rowIndex, colIndex] = new ReportCell("Total");
         }
-
-        private IKpi createKpi(KpiType kpitype, DayOfWeek DOW)
-        {
-
-            if (kpitype == KpiType.TOTALCLASSDURATION)
-            {
-                return new TotalClassDurationKpi(classHours, DOW);
-            }
-            else if (kpitype == KpiType.TOTALPAYMENT)
-            {
-                return new TotalPaymentKpi(classHours, DOW);
-            }
-            else if (kpitype == KpiType.PAYMENTPERHOUR)
-            {
-                return new PaymentPerHourKpi(classHours, DOW);
-            }
-            return new PaymentPerHourKpi(classHours, DOW);
-
-        }
-
-
     }
 }
