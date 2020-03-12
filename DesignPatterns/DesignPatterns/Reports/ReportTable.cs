@@ -16,7 +16,7 @@ namespace DesignPatterns.Reports
         private KpiType kpiType;
         private IKpi _kpi;
 
-        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment,KpiType kpiType, DayOfWeek dow)
+        public ReportTable(List<ClassInfo> classHours, string firstColumnAlignment, KpiType kpiType, DayOfWeek dow)
         {
             this.classHours = classHours;
             this.firstColumnAlignment = firstColumnAlignment;
@@ -113,22 +113,22 @@ namespace DesignPatterns.Reports
         }
 
         private IKpi createKpi(KpiType kpitype, DayOfWeek DOW)
-        {   
-            
-            if(kpitype == KpiType.TOTALCLASSDURATION)
+        {
+
+            if (kpitype == KpiType.TOTALCLASSDURATION)
             {
                 return new TotalClassDurationKpi(classHours, DOW);
             }
-            else if(kpitype == KpiType.TOTALPAYMENT)
+            else if (kpitype == KpiType.TOTALPAYMENT)
             {
                 return new TotalPaymentKpi(classHours, DOW);
             }
-            else if(kpitype == KpiType.PAYMENTPERHOUR)
+            else if (kpitype == KpiType.PAYMENTPERHOUR)
             {
                 return new PaymentPerHourKpi(classHours, DOW);
             }
-            return new PaymentPerHourKpi(classHours,DOW);
-            
+            return new PaymentPerHourKpi(classHours, DOW);
+
         }
 
 

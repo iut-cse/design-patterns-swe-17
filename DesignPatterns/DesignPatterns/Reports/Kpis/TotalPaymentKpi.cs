@@ -10,10 +10,10 @@ namespace DesignPatterns.Reports.Kpis
         private readonly IEnumerable<ClassInfo> paymentBDT;
         private readonly DayOfWeek dayOfWeek;
 
-        public TotalPaymentKpi(IEnumerable<ClassInfo> paymentBDT , DayOfWeek dayOfWeek)
-            :base(paymentBDT,dayOfWeek)
+        public TotalPaymentKpi(IEnumerable<ClassInfo> paymentBDT, DayOfWeek dayOfWeek)
+            : base(paymentBDT, dayOfWeek)
         {
-          
+
         }
 
         protected override IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped)

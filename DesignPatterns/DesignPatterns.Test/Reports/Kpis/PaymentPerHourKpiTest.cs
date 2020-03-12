@@ -17,7 +17,7 @@ namespace DesignPatterns.Test.Reports.Kpis
             var data = TestData.CreateData();
             var tch = new PaymentPerHourKpi(data, DayOfWeek.Monday);
             var output = tch.Calculate();
-            
+
             Assert.Equal(577.7777777777777, output["Physics"]);
             Assert.Equal(350, output["Bangla"]);
         }

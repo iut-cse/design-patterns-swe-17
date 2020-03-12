@@ -6,7 +6,6 @@ namespace DesignPatterns.Reports.Kpis
 {
     public abstract class Kpi : IKpi
     {
-
         private readonly IEnumerable<ClassInfo> classHours;
         private readonly DayOfWeek dayOfWeek;
 

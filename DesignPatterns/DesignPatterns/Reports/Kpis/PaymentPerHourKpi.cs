@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,4 +18,5 @@ namespace DesignPatterns.Reports.Kpis
         {
             return grouped.ToDictionary(g => g.Key, g => g.Sum(ch => ch.paymentBdt / g.Sum(ch => ch.durationHours)));
         }
-    }}
+    }
+}
