@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using DesignPatterns.MidSemester;
+using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -6,9 +7,10 @@ namespace DesignPatterns.Test.MidSemester
     {
         [Fact]
         void NoChange()
-        {
+         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            IStatistics unchanged = new PlainText(); 
+            var converted = unchanged.conversion(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +18,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            IStatistics compressThenEncrypt = new Encryption(new Compression(new PlainText()));
+            var converted = compressThenEncrypt.conversion(original); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,7 +27,8 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            IStatistics complex = new Compression(new Encoding(new Compression(new Encryption(new PlainText()))));
+            var converted = complex.conversion(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
@@ -32,7 +36,11 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncodeThenEncrypt()
         {
             // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            IStatistics compressThenEncodeThenEncrypt = new Encryption(new Encoding(new Compression(new PlainText())));
+            var converted = compressThenEncodeThenEncrypt.conversion(original); // do the convertion
+            Assert.Equal("(top score is 3)", converted);
+            
         }
     }
 }
