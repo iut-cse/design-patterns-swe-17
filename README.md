@@ -1,5 +1,7 @@
 # README for the students
 
+**!! Note: This document is Outdated. Ask Mohayemin to update it. !!**
+
 ## What this repository is about
 This This repository is for the Design Patterns students to submit their tasks.  
 This is exclusively for January 2020 Semester.
