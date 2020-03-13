@@ -11,6 +11,7 @@ namespace DesignPatterns.MidSemester
         {
             this.CloseAction = CloseAction;
         }
+
         public Ratul(IDistantAction DistantAction)
         {
             this.DistantAction = DistantAction;

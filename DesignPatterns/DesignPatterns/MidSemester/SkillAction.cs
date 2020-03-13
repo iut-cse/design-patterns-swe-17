@@ -1,15 +1,17 @@
 namespace DesignPatterns.MidSemester
 {
-    public class Power : IDistantAction
+    public class Skill : IDistantAction
     {
+
         public override string grab()
         {
-            return "pick up";
+            return "hold collar";
         }
 
         public override string hit()
         {
-            return "slam";
+            return "knee! knee!! knee!!!";
         }
+
     }
 }

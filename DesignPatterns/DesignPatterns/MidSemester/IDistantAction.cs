@@ -20,5 +20,6 @@ namespace DesignPatterns.MidSemester
 
         public abstract string grab();
         public abstract string hit();
+
     }
 }
