@@ -1,14 +1,24 @@
-﻿
-public class ConvertionDecorator : IConverter
-{ 
+﻿using System;
+using System.Collections.Generic;
 
-    public ConvertionDecorator(IConverter wrappee)
+namespace DesignPatterns.MidSemester
+{
+    public abstract class ConvertionDecorator : IConverter
     {
-        this.wrappee = wrappee;
-    }
 
-    public string Convert(string data)
-    {
-        return wrappee.Convert(data);
+        private readonly IConverter wrappee;
+
+        public ConvertionDecorator(IConverter wrappee)
+        {
+            this.wrappee = wrappee;
+        }
+
+        public string Convert(string data)
+        {
+            data = SelfConvert(data);
+            return wrappee.Convert(data);
+        }
+
+        protected abstract string SelfConvert(string data);
     }
 }

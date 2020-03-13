@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
-public class Encoder : ConvertionDecorator
+namespace DesignPatterns.MidSemester
 {
-	public Encoder(IConverter wrappee)
-		: base(wrappee)
-    {
 
-    }
 
-	public override string Convert(string data)
+	public class Encoder : ConvertionDecorator
 	{
-		data = "(" + data + ")";
-		return base.Convert(data);
-	}
+		public Encoder(IConverter wrappee)
+			: base(wrappee)
+		{
 
+		}
+
+		protected override string SelfConvert(string data)
+		{
+			return "(" + data + ")";
+		}
+
+	}
 }

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-
-public interface IConverter
-{
-	string Convert(string data);
-}
-
-public class NoConverter : IConverter
+﻿namespace DesignPattern.Midsemester
 {
 
-	public string Convert(string data)
+
+
+	public interface IConverter
 	{
-		return data;
+		string Convert(string data);
 	}
 
 }

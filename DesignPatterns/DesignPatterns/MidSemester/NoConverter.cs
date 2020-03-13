@@ -1,8 +1,12 @@
 ﻿using System;
 
-public class NoConverter
+
+public class NoConverter : IConverter
 {
-	public NoConverter()
+
+	public string Convert(string data)
 	{
+		return data;
 	}
+
 }
