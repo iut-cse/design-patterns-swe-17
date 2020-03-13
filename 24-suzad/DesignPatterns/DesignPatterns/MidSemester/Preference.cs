@@ -4,15 +4,19 @@ namespace DesignPatterns.MidSemester
 {
     public class Preference
     {
-        IDictionary<string, string> keyValue = new IDictionary<string, string>();
+        IDictionary<string, string> keyValue = new Dictionary<string, string>();
         private static Preference obj;
         private static readonly object locking = new object();
         // TODO: implement
-        void setPreference(string key, string value)
+        public void setPreference(string key, string value)
         {
+            if (keyValue.ContainsKey(key))
+            {
+                keyValue.Remove(key);
+            }
             keyValue.Add(key, value);
         }
-        string getPreference(string key)
+        public string getPreference(string key)
         {
             return keyValue[key];
         }
