@@ -8,7 +8,7 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Punch()
         {
-            Ratul ratul = null;
+            Ratul ratul = new Ratul();
             Assert.Equal("punch", ratul.ExecuteCloseAction());
         }
 
