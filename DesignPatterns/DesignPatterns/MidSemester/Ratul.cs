@@ -6,12 +6,16 @@ namespace DesignPatterns.MidSemester
     {
         CloseAction closeAction;
         DistantAction distantAction;
+        private Power power;
+        private Punch punch;
 
-        public Ratul(DistantAction distantAction, CloseAction closeAction)
+        public Ratul(CloseAction closeAction, DistantAction distantAction)
         {
             this.distantAction = distantAction;
             this.closeAction = closeAction;    
         }
+
+      
         public string ExecuteCloseAction()
         {
             return closeAction.ExecuteAction();

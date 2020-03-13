@@ -6,7 +6,8 @@ namespace DesignPatterns.MidSemester
 {
     class Head: CloseAction
     {
-        string executeAction()
+        
+        string ExecuteAction()
         {
             return "head head";
         }
