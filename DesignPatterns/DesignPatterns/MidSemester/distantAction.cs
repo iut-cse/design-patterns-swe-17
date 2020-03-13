@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DesignPatterns.MidSemester
 {
-    public abstract class distantAction
+    public abstract class DistantAction
     {
-        public List<string> actionList = new List<string>();
+        public List<string> ActionList = new List<string>();
 
         public IEnumerable<string> AllDistantAction()
         {
-            actionList.Add(Move());
-            actionList.Add(Grab());
-            actionList.Add(Hit());
+            ActionList.Add(Move());
+            ActionList.Add(Grab());
+            ActionList.Add(Hit());
 
-            return actionList;
+            return ActionList;
         }
+
         public string Move()
         {
             return "move";

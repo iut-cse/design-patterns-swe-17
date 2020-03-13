@@ -5,11 +5,11 @@ namespace DesignPatterns.MidSemester
 {
     public class Ratul
     {
-        public I_CloseAction CurrentCloseAction;
-        public distantAction CurrentDistantAction;
+        public ICloseAction CurrentCloseAction;
+        public DistantAction CurrentDistantAction;
 
 
-        public Ratul(I_CloseAction currentCloseAction, distantAction currentDistantAction)
+        public Ratul(ICloseAction currentCloseAction, DistantAction currentDistantAction)
         {
             this.CurrentCloseAction = currentCloseAction;
             this.CurrentDistantAction = currentDistantAction;

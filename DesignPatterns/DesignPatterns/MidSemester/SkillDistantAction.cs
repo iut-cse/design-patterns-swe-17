@@ -4,16 +4,16 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class Skill_distantAction : distantAction
+    class SkillDistantAction : DistantAction
     {
         public override string Grab()
         {
-            return "Hold collar!";
+            return "hold collar";
         }
 
         public override string Hit()
         {
-            return "Hit knee!";
+            return "knee! knee!! knee!!!";
         }
     }
 }

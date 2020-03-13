@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class Punch : I_CloseAction
+    public class Punch : ICloseAction
     {
         public string DoAction()
         {
-            return "Punch!!!";
+            return "PUNCH";
         }
     }
 }

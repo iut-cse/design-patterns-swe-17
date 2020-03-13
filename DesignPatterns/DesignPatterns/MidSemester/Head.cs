@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class Head : I_CloseAction
+    public class Head : ICloseAction
     {
         public string DoAction()
         {
-            return "Head!!!";
+            return "HEAD HEAD";
         }
     }
 }
