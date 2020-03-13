@@ -2,7 +2,6 @@
 {
     public class Preference
     {
-        // TODO: implement 
-        // some change
+        // TODO: implement
     }
 }
