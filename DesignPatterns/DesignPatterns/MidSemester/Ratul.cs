@@ -7,14 +7,12 @@ namespace DesignPatterns.MidSemester
         public ICloseAction closeAction;
         public IDistantAction distantAction;
 
-        public Ratul(ICloseAction closeAction)
+        public Ratul(ICloseAction closeAction, IDistantAction distantAction)
         {
             this.closeAction = closeAction;
-        }
-        public Ratul(IDistantAction distantAction)
-        {
             this.distantAction = distantAction;
         }
+       
         public string ExecuteCloseAction()
         {
             return closeAction.performCloseAction();
