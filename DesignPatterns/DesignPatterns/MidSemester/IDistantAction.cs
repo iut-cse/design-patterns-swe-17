@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    interface IDistantAction
+    public interface IDistantAction
     {
         public string performDistantAction();
     }
