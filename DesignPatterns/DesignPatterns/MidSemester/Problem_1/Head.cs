@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace DesignPatterns.MidSemester.Problem_1
+﻿namespace DesignPatterns.MidSemester
 {
-    public class Head : CloseAction
+    public class Head : ICloseAction
     {
-        public string ExecuteCloseAction()
+        public string execute()
         {
             return "head head";
         }

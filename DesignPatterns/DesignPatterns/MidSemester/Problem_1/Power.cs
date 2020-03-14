@@ -1,14 +1,13 @@
-﻿using System;
-
-namespace DesignPatterns.MidSemester.Problem_1
+﻿namespace DesignPatterns.MidSemester
 {
     public class Power : DistantAction
     {
-        public override string Grab()
+        public override string grab()
         {
             return "pick up";
         }
-        public override string Hit()
+
+        public override string hit()
         {
             return "slam!";
         }

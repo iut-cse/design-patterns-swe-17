@@ -8,4 +8,3 @@ namespace DesignPatterns.MidSemester.Problem_1
 		public string ExecuteCloseAction();
 	}
 }
-

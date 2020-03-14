@@ -1,18 +1,15 @@
-﻿using System;
-
-namespace DesignPatterns.MidSemester.Problem_1
+﻿namespace DesignPatterns.MidSemester
 {
     public class Skill : DistantAction
     {
-        public override string Grab()
+        public override string grab()
         {
             return "hold collar";
         }
-        public override string Hit()
+
+        public override string hit()
         {
             return "knee! knee!! knee!!!";
         }
     }
-
-
 }

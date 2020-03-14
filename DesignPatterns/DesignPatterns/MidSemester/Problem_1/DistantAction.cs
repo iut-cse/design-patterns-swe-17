@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace DesignPatterns.MidSemester.Problem_1
+namespace DesignPatterns.MidSemester
 {
-	public abstract class DistantAction 
-	{
-		public IEnumerable<string> ExecuteDistantAction()
+    public abstract class DistantAction
+    {
+        public string move()
         {
-			yield return Move();
-			yield return Grab();
-			yield return Hit();
+            return "move";
         }
-		private string Move()
-        {
-			return "move";
-        }
+        public abstract string grab();
+        public abstract string hit();
 
-		public abstract string Grab();
-		public abstract string Hit();
-		
-	}
+        public IEnumerable<string> execute()
+        {
+            return new[] { move(), grab(), hit() };
+        }
+    }
 }
-
