@@ -1,4 +1,6 @@
-﻿namespace DesignPatterns.MidSemester
+﻿using System;
+
+namespace DesignPatterns.MidSemester
 {
     public class Preference
     {
@@ -7,11 +9,7 @@
         private string TheKey;
         private string TheValue;
 
-        private Preference()
-        {
-
-        }
-        public Preference getInstance(string key,string value)
+        public static Preference GetInstance()
         {
             if (instance == null)
             {
@@ -27,19 +25,29 @@
             return instance;
         }
 
+        private Preference()
+        {
+
+        }
+        
+
         public void setPreference(string key,string value)
         {
             TheKey = key;
             TheValue = value;
         }
 
-        public string getPrefrence(string key)
+        public string getPreference(string key)
         {
             if (key.Equals(TheKey))
+            {
                 return TheValue;
+            }
 
             else
-                return null;
+            {
+                return "null";
+            }
         }
 
 
