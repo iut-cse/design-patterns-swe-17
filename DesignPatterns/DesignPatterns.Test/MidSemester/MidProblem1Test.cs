@@ -1,7 +1,6 @@
 ﻿using DesignPatterns.MidSemester;
 using DesignPatterns.MidSemester.Problem_1;
 using Xunit;
-using Ratul = DesignPatterns.MidSemester.Ratul;
 
 namespace DesignPatterns.Test.MidSemester
 {
