@@ -24,15 +24,17 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            var converted = new Encrypt(new Compress(new Encode(new Compress(new PlainTextStat())))).fileRead(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
         [Fact]
         void CompressThenEncodeThenEncrypt()
         {
+			var original = "Top Score is 305";
+            var converted = new Compress(new Encode(new Encrypt(new PlainTextStat()))).fileRead(original);
             // TODO: Implement this;
-            Assert.True(false);
+            Assert.Equal("(top score is 3)",converted);
         }
     }
 }
