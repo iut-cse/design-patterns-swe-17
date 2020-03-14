@@ -8,7 +8,7 @@ namespace DesignPatterns.MidSemester
     {
         public string ExecuteCloseAction()
         {
-            return "Paye Lathi";
+            return "Paa diye Lathi";
         }
     }
 }
