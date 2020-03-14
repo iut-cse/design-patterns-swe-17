@@ -8,7 +8,8 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            DataSource source = new RawData();
+            var converted = source.convertion(original);
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +17,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            DataSource source = new EncryptionDecorator(new CompressionDecorator(new RawData()));
+            var converted = source.convertion(original); 
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,15 +26,18 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            DataSource source = new CompressionDecorator(new EncodingDecorator(new CompressionDecorator(new EncryptionDecorator(new RawData()))));
+            var converted = source.convertion(original);
             Assert.Equal("(top score is ", converted);
         }
 
         [Fact]
         void CompressThenEncodeThenEncrypt()
         {
-            // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            DataSource source = new EncryptionDecorator(new EncodingDecorator(new CompressionDecorator(new RawData())));
+            var converted = source.convertion(original);
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }
