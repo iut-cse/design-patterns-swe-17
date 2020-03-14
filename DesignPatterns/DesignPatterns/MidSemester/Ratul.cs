@@ -4,9 +4,19 @@ namespace DesignPatterns.MidSemester
 {
     public class Ratul
     {
+        public ICloseAction CurrentCloseAction;
+        public DistantAction CurrentDistantAction;
+
+
+        public Ratul(ICloseAction currentCloseAction, DistantAction currentDistantAction)
+        {
+            this.CurrentCloseAction = currentCloseAction;
+            this.CurrentDistantAction = currentDistantAction;
+        }
+
         public string ExecuteCloseAction()
         {
-            return null;
+            return CurrentCloseAction.DoAction();
         }
 
         public IEnumerable<string> ExecuteDistantAction()
@@ -15,7 +25,8 @@ namespace DesignPatterns.MidSemester
             // However, there is a thing called `yield return` in C#.
             // Using it would be "cool"
             // Make sure you understand it if you choose to use it.
-            return null;
+
+            return CurrentDistantAction.AllDistantAction();
         }
     }
 }
