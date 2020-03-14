@@ -5,7 +5,7 @@ using System.Text;
 namespace DesignPatterns.MidSemester
 {
 
-        public abstract class DistantAction
+        public abstract class IDistantAction
         {
             public IEnumerable<String> PerformDistantaction()
             {
@@ -22,7 +22,7 @@ namespace DesignPatterns.MidSemester
             abstract public String Hit();
         }
 
-        public class PowerAction : DistantAction
+        public class PowerAction : IDistantAction
         {
             public override string Grab()
             {
@@ -35,7 +35,7 @@ namespace DesignPatterns.MidSemester
             }
         }
 
-        public class SkillDAction : DistantAction
+        public class SkillAction :IDistantAction
         {
             public override string Grab()
             {
