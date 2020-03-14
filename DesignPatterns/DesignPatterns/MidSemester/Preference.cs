@@ -10,7 +10,7 @@ namespace DesignPatterns.MidSemester
         private static Preference instance;
 
 
-        private static readonly object _lock = new object();
+        //private static readonly object _lock = new object();
         private IDictionary<string, string> dic = new Dictionary<string, string>();
 
         public static Preference GetInstance()
