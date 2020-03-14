@@ -8,7 +8,7 @@ using Xunit;
 namespace DesignPatterns.Test.Reports.Kpis
 {
     public class PaymentperHourTest
-    {
+    {/*
         [Fact]
         public void Monday()
         {
@@ -30,6 +30,6 @@ namespace DesignPatterns.Test.Reports.Kpis
 
             Assert.Equal(400.0/5, output["Physics"]);
             Assert.Equal(100.0/2, output["Chemistry"]);
-        }
+        }*/
     }
 }

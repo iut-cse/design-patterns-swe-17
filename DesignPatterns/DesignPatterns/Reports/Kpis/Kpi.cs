@@ -6,6 +6,10 @@ namespace DesignPatterns.Reports.Kpis
 {
     public abstract class Kpi : IKpi
     {
+        protected Kpi(IEnumerable<ClassInfo> classHours, DayOfWeek dayOfWeek)
+        {
+        }
+
         public double Calculate(List<ClassInfo> data, Predicate<ClassInfo> filter)
         {
             var filtered = data.FindAll(filter);

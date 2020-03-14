@@ -10,12 +10,12 @@ namespace DesignPatterns.Test._Demos
     {
         [Fact]
         void Demo()
-        {
+        {/*
             var data = TestData.CreateData();
             var table = new ReportTable(new PaymentPerHourKpi(),  data, "left");
             var sb = new StringBuilder();
             table.Render(sb);
-            new OutputFile().Write(sb.ToString());
+            new OutputFile().Write(sb.ToString());*/
         }
     }
 }

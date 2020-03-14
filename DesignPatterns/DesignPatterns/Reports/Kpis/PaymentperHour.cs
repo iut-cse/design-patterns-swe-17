@@ -9,9 +9,14 @@ public class PaymentperHour : Kpi
     public PaymentperHour(IEnumerable<ClassInfo> classHours, DayOfWeek dayOfWeek) : base(classHours, dayOfWeek)
     {
     }
-
+    /*
     protected override IDictionary<string, double> GroupToDictionary(IEnumerable<IGrouping<string, ClassInfo>> grouped)
     {
         return grouped.ToDictionary(g => g.Key, g => (g.Sum(ch => ch.paymentBdt)/g.Sum(ch => ch.durationHours)));
+    }
+    */
+    protected override double KpiFunction(List<ClassInfo> filtered)
+    {
+        throw new NotImplementedException();
     }
 }
