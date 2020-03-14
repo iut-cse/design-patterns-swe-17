@@ -1,14 +1,15 @@
 ﻿namespace DesignPatterns.MidSemester.Task2
 {
-    public class Encode : ConversionDecorator
+    public class Uppercase : ConversionDecorator
     {
-        public Encode(IConverter wrapee) : base(wrapee)
+        public Uppercase(IConverter wrapee) : base(wrapee)
         {
             this.wrapee = wrapee;
         }
+
         public override string SelfConvert(string data)
         {
-            data = "(" + data + ")";
+            data = data.ToUpper();
             return data;
         }
     }

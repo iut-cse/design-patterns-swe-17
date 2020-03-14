@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.MidSemester
+namespace DesignPatterns.MidSemester.Task2
 {
     public interface IConverter
     {

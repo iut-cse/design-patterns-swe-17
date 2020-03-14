@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.MidSemester
+﻿namespace DesignPatterns.MidSemester.Task2
 {
     public class Compress : ConversionDecorator
     {

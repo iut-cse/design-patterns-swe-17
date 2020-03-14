@@ -1,4 +1,4 @@
-﻿using DesignPatterns.MidSemester;
+﻿using DesignPatterns.MidSemester.Task2;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
@@ -36,8 +36,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncodeThenEncrypt()
         {
             var original = "Top Score is 305";
-            IConverter d2 = new Encrypt(new Compress(new Encode(new NoConversion())));
-            var converted = d2.Convert(original); // compress then encryppt.
+            IConverter d4 = new Encrypt(new Compress(new Encode(new NoConversion())));
+            var converted = d4.Convert(original); // compress then encryppt.
             Assert.Equal("(top score is 3)", converted);
         }
     }
