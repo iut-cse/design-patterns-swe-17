@@ -6,6 +6,6 @@ namespace DesignPatterns.MidSemester
 {
     public interface IDistantAction
     {
-        public string performDistantAction();
+        public IEnumerable<string> performDistantAction();
     }
 }
