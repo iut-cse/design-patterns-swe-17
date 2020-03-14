@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    interface DistantAction
+    interface ICloseAction
     {
-        public void performDistantAction();
+        public string performCloseAction();
     }
 }
