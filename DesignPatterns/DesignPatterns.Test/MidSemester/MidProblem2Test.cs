@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using DesignPatterns.MidSemester;
+using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -8,7 +9,8 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            IConverter d1 = new NoConversion();
+            var converted = d1.Convert(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +18,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            IConverter d2 = new Encrypt(new Compress(new NoConversion()));
+            var converted = d2.Convert(original); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,15 +27,18 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            IConverter d3 = new Encrypt(new Compress(new Encode(new Compress(new NoConversion()))));
+            var converted = d3.Convert(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
         [Fact]
         void CompressThenEncodeThenEncrypt()
         {
-            // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            IConverter d2 = new Encrypt(new Compress(new Encode(new NoConversion())));
+            var converted = d2.Convert(original); // compress then encryppt.
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }
