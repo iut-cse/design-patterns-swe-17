@@ -1,4 +1,4 @@
-﻿using DesignPatterns.MidSemester;
+﻿using DesignPatterns.MidSemester.Task3;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
