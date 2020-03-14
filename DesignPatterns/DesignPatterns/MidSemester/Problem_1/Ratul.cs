@@ -5,11 +5,11 @@ namespace DesignPatterns.MidSemester.Problem_1
     public class Ratul
     {
         
-        private CloseAction closeAction;
+        private ICloseAction closeAction;
         private DistantAction distantAction;
 
 
-        public Ratul(CloseAction closeAction, DistantAction distantAction)
+        public Ratul(ICloseAction closeAction, DistantAction distantAction)
         {
             
             this.closeAction =closeAction;
