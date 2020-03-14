@@ -1,4 +1,4 @@
-﻿using DesignPatterns.MidSemester;
+﻿using DesignPatterns.MidSemester.problem1;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
@@ -8,7 +8,7 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Punch()
         {
-            Ratul ratul = new Ratul(new Head(), null);
+            Ratul ratul = new Ratul(new Punch(), null) ;
             Assert.Equal("punch", ratul.ExecuteCloseAction());
         }
 

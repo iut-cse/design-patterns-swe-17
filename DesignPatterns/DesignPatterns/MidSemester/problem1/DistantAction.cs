@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DesignPatterns.MidSemester.Problem_1
+namespace DesignPatterns.MidSemester.problem1
 {
 	public abstract class DistantAction 
 	{

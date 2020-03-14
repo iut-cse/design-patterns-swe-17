@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPatterns.MidSemester.Problem_1
+namespace DesignPatterns.MidSemester.problem1
 {
     public class Kick : CloseAction
     {
