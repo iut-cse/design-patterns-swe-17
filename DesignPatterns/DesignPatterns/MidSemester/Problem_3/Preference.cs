@@ -18,7 +18,7 @@ namespace DesignPatterns.MidSemester.Problem_3
         {
             if (Instance == null)
             {
-                lock (_lock) ;
+                lock (_lock);
                 {
                     if(Instance==null)
                     {
