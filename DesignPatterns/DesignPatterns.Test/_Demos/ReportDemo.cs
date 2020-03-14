@@ -12,7 +12,7 @@ namespace DesignPatterns.Test._Demos
         void Demo()
         {
             var data = TestData.CreateData();
-            var table = new ReportTable(new PaymentPerHourKpi(),  data, "left");
+            var table = new ReportTable(new PaymentPerHourKpi(), data, "left");
             var sb = new StringBuilder();
             table.Render(sb);
             new OutputFile().Write(sb.ToString());

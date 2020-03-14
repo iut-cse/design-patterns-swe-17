@@ -29,7 +29,7 @@ namespace DesignPatterns.MidSemester
     {
         public string TakeCloseAction()
         {
-            return "head";
+            return "head head";
         }
     }
 }
