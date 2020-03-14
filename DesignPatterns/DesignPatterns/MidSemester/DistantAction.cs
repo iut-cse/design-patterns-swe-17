@@ -10,11 +10,16 @@ namespace DesignPatterns.MidSemester
         ExecuteDistantAction()
         {
             yield return Move();
+            yield return Grab();
+            yield return Hit();
         }
 
         private string Move()
         {
             return "move";
         }
+
+        public abstract string Grab();
+        public abstract string Hit();
     }
 }
