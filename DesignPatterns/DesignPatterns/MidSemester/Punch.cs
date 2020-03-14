@@ -8,7 +8,7 @@ namespace DesignPatterns.MidSemester
     {
         public string ExecuteCloseAction()
         {
-            return "hat diye Ghushi";
+            return "punch";
         }
     }
 }

@@ -8,12 +8,12 @@ namespace DesignPatterns.MidSemester
     {
         public override string Grab()
         {
-            return "Collar Dhore Uthao";
+            return "hold collar";
         }
 
         public override string Hit()
         {
-            return "Pet a hatu diye maro";
+            return "knee! knee!! knee!!!";
         }
     }
 }

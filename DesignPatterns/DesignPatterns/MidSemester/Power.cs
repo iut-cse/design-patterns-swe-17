@@ -8,12 +8,12 @@ namespace DesignPatterns.MidSemester
     {
         public override string Grab()
         {
-            return "Upore Uthao";
+            return "pick up";
         }
 
         public override string Hit()
         {
-            return "Matite Achar";
+            return "slam!";
         }
     }
 }
