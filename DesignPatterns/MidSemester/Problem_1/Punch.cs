@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.MidSemester.Problem_1
 {
-    public class Punch : CloseAction
+    public class Punch : ICloseAction
     {
         public string ExecuteCloseAction()
         {

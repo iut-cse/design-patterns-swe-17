@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.MidSemester.Problem_1
 {
-    public class Kick : CloseAction
+    public class Kick : ICloseAction
     {
         public string ExecuteCloseAction()
         {

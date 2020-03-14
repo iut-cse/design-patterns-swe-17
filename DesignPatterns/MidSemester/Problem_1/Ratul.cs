@@ -5,20 +5,18 @@ namespace DesignPatterns.MidSemester.Problem_1
     public class Ratul
     {
         
-        private CloseAction closeAction;
+        private ICloseAction icloseAction;
         private DistantAction distantAction;
 
 
-        public Ratul(CloseAction closeAction, DistantAction distantAction)
+        public Ratul(ICloseAction icloseAction, DistantAction distantAction)
         {
-            
-            this.closeAction =closeAction;
+            this.icloseAction = icloseAction;
             this.distantAction = distantAction;
-
         }
         public string ExecuteCloseAction()
         {
-            return closeAction.ExecuteCloseAction();
+            return icloseAction.ExecuteCloseAction();
         }
 
         public IEnumerable<string> ExecuteDistantAction()
