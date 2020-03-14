@@ -25,7 +25,7 @@ namespace DesignPatterns.Test.MidSemester
         void Head()
         {
             Ratul ratul = new head();
-               Ratul ratun = new Ratul(action);
+            Ratul ratun = new Ratul(action);
             Assert.Equal("head head", ratul.ExecuteCloseAction());
         }
 
