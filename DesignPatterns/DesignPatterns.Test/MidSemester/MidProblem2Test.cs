@@ -36,7 +36,7 @@ namespace DesignPatterns.Test.MidSemester
             // TODO: Implement this;
             var original = "Top score is 305";
             var converted = new Compresser(new Encoder(new Encrypt(new NoConverter()))).Convert(original);
-            Assert.True(false);
+            Assert.Equal("(top score is 3)",converted);
         }
     }
 }

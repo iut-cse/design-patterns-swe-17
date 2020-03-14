@@ -7,9 +7,7 @@ namespace DesignPatterns.MidSemester.Problem_1
 	{
 		public IEnumerable<string> ExecuteDistantAction()
         {
-			yield return Move();
-			yield return Grab();
-			yield return Hit();
+			return new[] { Move(), Grab(), Hit() };
         }
 		private string Move()
         {
