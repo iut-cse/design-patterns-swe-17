@@ -8,7 +8,8 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            DataSource ds1=new PlainTextFile();
+            var converted = ds1.conversion(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +17,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            DataSource ds2 =new EncryptionDecorator(new CompressDecorator(new PlainTextFile()));
+            var converted = ds2.conversion(original); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,7 +26,8 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            DataSource ds3 =new CompressionDecorator(new EncodingDecorator(new CompressionDecorator(new EncryptionDecorator(new PlainTextFile()))));
+            var converted = ds3.conversion(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
@@ -32,7 +35,12 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncodeThenEncrypt()
         {
             // TODO: Implement this;
-            Assert.True(false);
+            //Assert.True(false);
+            var original = "Top Score is 305";
+            DataSource ds4 =new EncryptionDecorator (new EncodingDecorator(new CompressionDecorator(new PlainTextFile())));
+            var converted = ds4.conversion(original); // do the convertion
+            Assert.Equal("(top score is ", converted);
+
         }
     }
 }
