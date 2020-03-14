@@ -4,6 +4,8 @@
     {
         private static Preference preference;
         private static readonly object Lock = new object();
+        private string checkvalue,checkkey;
+
         private Preference()
         {
 
@@ -23,12 +25,25 @@
             }
             return preference;
         }
-        void setPreference(string key,string value)
+        public void setPreference(string key,string value)
         {
+            checkvalue = value;
+            checkkey = key;
 
         }
 
-       
+       public string getPreference(string key)
+        {
+            if(key.Equals(checkkey))
+            {
+                return checkvalue;
+            }
+            else
+            {
+                return "null";
+            }
+        }
+
 
     }
 }
