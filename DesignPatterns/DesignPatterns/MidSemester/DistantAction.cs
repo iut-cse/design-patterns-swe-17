@@ -10,13 +10,13 @@ namespace DesignPatterns.MidSemester
         {
             return "move";
         }
-        public abstract string grab();
-        public abstract string hit();
+        public abstract string Grab();
+        public abstract string Hit();
         public IEnumerable<string> performDistantAction()
         {
             yield return move();
-            yield return grab();
-            yield return hit();
+            yield return Grab();
+            yield return Hit();
         }
     }
 }
