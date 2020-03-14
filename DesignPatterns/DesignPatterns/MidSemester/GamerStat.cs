@@ -2,9 +2,9 @@
 {
     public class GamerStat : IGamerStat
     {
-        public string Stat(string stat)
+        public string statistics(string inStat)
         {
-            return stat;
+            return inStat;
         }
     }
 }

@@ -1,14 +1,18 @@
 ﻿namespace DesignPatterns.MidSemester
 {
-    public class EncoderDecorator : BaseDecorator
+    public class EncoderDecor : BaseDecorator
     {
-        public EncoderDecorator(IGamerStat _decoratorGamerStat) : base(_decoratorGamerStat)
+        public EncoderDecor(IGamerStat Base) : base(Base)
         {
+
         }
 
-        public override string Stat(string stat)
+        public override string statistics(string inStat)
         {
-            return "(" + base.Stat(stat) + ")";
+            string container;
+            container = "(" + ToBeCoated.statistics(inStat) + ")";
+
+            return container;
         }
     }
 }

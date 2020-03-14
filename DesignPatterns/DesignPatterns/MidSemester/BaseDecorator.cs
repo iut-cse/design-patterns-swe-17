@@ -1,26 +1,16 @@
 ﻿namespace DesignPatterns.MidSemester
 {
-    public class CompressorDecorator : BaseDecorator
+    public class BaseDecorator : IGamerStat
     {
-        public CompressorDecorator(IGamerStat _decoratorGamerStat) : base(_decoratorGamerStat)
+        public IGamerStat ToBeCoated;
+        public BaseDecorator(IGamerStat Base)
         {
-
+            this.ToBeCoated = Base;
         }
 
-        public CompressorDecorator(IGamerStat _decoratorGamerStat) : this(_decoratorGamerStat)
+        public virtual string statistics(string inStat)
         {
-        }
-
-        public override string Stat(string stat)
-        {
-            var len = base.Stat(stat).Length;
-            string x = base.Stat(stat);
-            string ans = null;
-
-            for (var i = 0; i < len - 2; i++)
-                ans += x[i];
-
-            return ans;
+            return ToBeCoated.statistics(inStat);
         }
     }
 }
