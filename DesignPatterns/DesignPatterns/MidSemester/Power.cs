@@ -4,15 +4,15 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class Power:DistantAction
+    public class Power:DistantAction
     {
         public override string Grab()
         {
-            return "Pick up";
+            return "pick up";
         }
         public override string Hit()
         {
-            return "Slam";
+            return "slam!";
         }
     }
 }
