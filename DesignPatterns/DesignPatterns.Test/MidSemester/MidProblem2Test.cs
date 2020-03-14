@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using DesignPatterns.MidSemester;
+using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -8,7 +9,9 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            // Do the "No Change" conversion.
+            StringDataSource stringDataSource = new StringDataSource(original);
+            var converted = stringDataSource.writeData();
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +19,9 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            //var converted = ""; // compress then encryppt.
+            var converted = new EncryptionDecorator(new CompresssionDecorator(
+                new StringDataSource(original))).writeData();
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,7 +29,9 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            var converted = new EncryptionDecorator(new CompresssionDecorator(
+                new EncodeDecorator(new CompresssionDecorator(
+                    new StringDataSource(original))))).writeData();
             Assert.Equal("(top score is ", converted);
         }
 
@@ -32,7 +39,9 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncodeThenEncrypt()
         {
             // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            var converted = new EncryptionDecorator(new EncodeDecorator(new CompresssionDecorator(new StringDataSource(original)))).writeData(); // compress then encryppt.
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }
