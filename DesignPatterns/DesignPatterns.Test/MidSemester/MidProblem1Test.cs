@@ -1,5 +1,4 @@
 ﻿using DesignPatterns.MidSemester;
-using Ext.Net;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
@@ -9,40 +8,35 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Punch()
         {
-            CloseAction action = new Punch();
-            Ratul ratul = new Ratul(action);
+            Ratul ratul = new Ratul(new Punch(), new Power());
             Assert.Equal("punch", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Kick()
         {
-            CloseAction action = new Kick();
-            Ratul ratul = new Ratul(action);
+            Ratul ratul = new Ratul(new Kick(), new Skill());
             Assert.Equal("kick", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Head()
         {
-            CloseAction action = new Head();
-            Ratul ratul = new Ratul(action);
+            Ratul ratul = new Ratul(new Head(), new Power());
             Assert.Equal("head head", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Power()
         {
-            DistantAction action = new Power();
-            Ratul ratul = new Ratul(action);
+            Ratul ratul = new Ratul(new Head(), new Power());
             Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
         }
 
         [Fact]
         void Skill()
         {
-            DistantAction action = new Skill();
-            Ratul ratul = new Ratul(action);
+            Ratul ratul = new Ratul(new Head(), new Skill());
             Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
         }
     }

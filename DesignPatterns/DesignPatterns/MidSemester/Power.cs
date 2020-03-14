@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class Power : DistantAction
+    public class Power : DistantAction
     {
         public override string Grab()
         {

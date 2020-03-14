@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    class Head : CloseAction
+    public class Head : CloseAction
     {
         public string ExecuteCloseAction()
         {

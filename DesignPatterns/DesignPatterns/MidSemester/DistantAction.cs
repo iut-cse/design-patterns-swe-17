@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    abstract class DistantAction
+    public abstract class DistantAction
     {
         public IEnumerable<string>
         ExecuteDistantAction()
