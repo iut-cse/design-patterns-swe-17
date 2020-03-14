@@ -7,6 +7,7 @@ namespace DesignPatterns.MidSemester
         public string ExecuteCloseAction()
         {
             return null;
+            //check push
         }
 
         public IEnumerable<string> ExecuteDistantAction()
