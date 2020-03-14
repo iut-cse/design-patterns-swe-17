@@ -6,5 +6,9 @@ namespace DesignPatterns.MidSemester
 {
     class Kick:CloseAction
     {
+        public void performCloseAction()
+        {
+            Console.WriteLine("Kick");
+        }
     }
 }

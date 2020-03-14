@@ -6,5 +6,6 @@ namespace DesignPatterns.MidSemester
 {
     interface DistantAction
     {
+        public void performDistantAction();
     }
 }

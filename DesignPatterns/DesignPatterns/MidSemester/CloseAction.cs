@@ -6,5 +6,6 @@ namespace DesignPatterns.MidSemester
 {
     interface CloseAction
     {
+        public void performCloseAction();
     }
 }

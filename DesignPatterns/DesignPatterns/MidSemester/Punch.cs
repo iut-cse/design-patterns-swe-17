@@ -6,5 +6,9 @@ namespace DesignPatterns.MidSemester
 {
     class Punch:CloseAction
     {
+        public void performCloseAction()
+        {
+            Console.WriteLine("Punch");
+        }
     }
 }

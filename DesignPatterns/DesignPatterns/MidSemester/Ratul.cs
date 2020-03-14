@@ -4,6 +4,8 @@ namespace DesignPatterns.MidSemester
 {
     public class Ratul
     {
+        CloseAction closeaction;
+        DistantAction distantaction;
         public string ExecuteCloseAction()
         {
             return null;
