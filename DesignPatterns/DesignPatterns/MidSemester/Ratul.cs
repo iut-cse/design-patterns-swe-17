@@ -4,9 +4,9 @@ namespace DesignPatterns.MidSemester
 {
     public class Ratul
     {
-        private CloseAction closeAction;
+        CloseAction closeAction;
         private DistantAction distantAction;
-
+        
         public Ratul(CloseAction closeAction, DistantAction distantAction)
         {
             this.closeAction = closeAction;
