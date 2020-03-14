@@ -6,9 +6,9 @@ namespace DesignPatterns.MidSemester
 {
     class Head:CloseAction
     {
-        public void performCloseAction()
+        public string performCloseAction()
         {
-            Console.WriteLine("Head");
+            return "Head";
         }
     }
 }

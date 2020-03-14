@@ -6,9 +6,18 @@ namespace DesignPatterns.MidSemester
     {
         CloseAction closeaction;
         DistantAction distantaction;
+        public Ratul(CloseAction closeaction)
+        {
+            this.closeaction = closeaction;
+        }
+        public Ratul(DistantAction distantaction)
+        {
+            this.distantaction = distantaction;
+        }
+
         public string ExecuteCloseAction()
         {
-            return null;
+            return closeaction.performCloseAction();
         }
 
         public IEnumerable<string> ExecuteDistantAction()
