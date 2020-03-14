@@ -1,7 +1,6 @@
-﻿using DesignPatterns.MidSemester;
-using Xunit;
+﻿using Xunit;
 
-namespace DesignPatterns.Test.MidSemester
+/*namespace DesignPatterns.Test.MidSemester
 {
     public class MidProblem3Test
     {
@@ -19,4 +18,4 @@ namespace DesignPatterns.Test.MidSemester
             // assert
         }
     }
-}
+}*/

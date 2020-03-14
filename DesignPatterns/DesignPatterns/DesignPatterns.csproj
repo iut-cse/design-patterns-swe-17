@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Reports\**" />
+    <EmbeddedResource Remove="Reports\**" />
+    <None Remove="Reports\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
   </ItemGroup>
 </Project>
