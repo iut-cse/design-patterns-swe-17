@@ -7,10 +7,9 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void NoChange()
         {
-
             var original = "Top Score is 305";
 
-            var converted = ""; // Do the "No Change" conversion.
+            var converted = new plaintextstat().fileRead(original); // Do the "No Change" conversion.
 
             Assert.Equal("Top Score is 305", converted);
 
@@ -22,7 +21,7 @@ namespace DesignPatterns.Test.MidSemester
 
             var original = "Top Score is 305";
 
-            var converted = ""; // compress then encryppt.
+            var converted = new compress(new encrypt(new plaintextstat())).fileRead(original);// compress then encryppt.
 
             Assert.Equal("top score is 3", converted);
 
@@ -34,7 +33,7 @@ namespace DesignPatterns.Test.MidSemester
 
             var original = "Top Score is 305";
 
-            var converted = ""; // do the convertion
+            var converted = ""; 
 
             Assert.Equal("(top score is ", converted);
 
