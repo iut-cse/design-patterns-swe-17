@@ -3,47 +3,73 @@ using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
-    public class MidProblem1Test
+    [Fact]
+
+    void Punch()
+
     {
-        [Fact]
-        void Punch()
-        {
-            Ratul ratul = new Ratul(new Punch(), new Skill());
 
-            Assert.Equal("punch", ratul.ExecuteCloseAction());
-        }
+        Ratul ratul = new Ratul(new punch(), new skill());
 
-        [Fact]
-        void Kick()
-        {
-            Ratul ratul = new Ratul(new Kick(), new Skill());
+        Assert.Equal("punch", ratul.ExecuteCloseAction());
 
-            Assert.Equal("kick", ratul.ExecuteCloseAction());
-        }
-
-        [Fact]
-        void Head()
-        {
-            Ratul ratul = new Ratul(new Head(), new Skill());
-
-            Assert.Equal("head head", ratul.ExecuteCloseAction());
-
-        }
-
-        [Fact]
-        void Power()
-        {
-            Ratul ratul = new Ratul(new Kick(), new Power());
-
-            Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
-        }
-
-        [Fact]
-        void Skill()
-        {
-            Ratul ratul = new Ratul(new Kick(), new Skill());
-
-            Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
-        }
     }
+
+
+
+    [Fact]
+
+    void Kick()
+
+    {
+
+        Ratul ratul = new Ratul(new Kick(), new skill());
+
+        Assert.Equal("kick", ratul.ExecuteCloseAction());
+
+    }
+
+
+
+    [Fact]
+
+    void head()
+
+    {
+
+        Ratul ratul = new Ratul(new head(), new skill());
+
+        Assert.Equal("head head", ratul.ExecuteCloseAction());
+
+    }
+
+
+
+    [Fact]
+
+    void Power()
+
+    {
+
+        Ratul ratul = new Ratul(new Kick(), new Power());
+
+        Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
+
+    }
+
+
+
+    [Fact]
+
+    void skill()
+
+    {
+
+        Ratul ratul = new Ratul(new Kick(), new skill());
+
+        Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
+
+    }
+
+}
 }
