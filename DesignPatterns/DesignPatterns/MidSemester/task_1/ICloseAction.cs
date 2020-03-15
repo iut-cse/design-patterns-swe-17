@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.MidSemester.Task_1
+namespace DesignPatterns.MidSemester.task_1
 {
     public interface ICloseAction
     {

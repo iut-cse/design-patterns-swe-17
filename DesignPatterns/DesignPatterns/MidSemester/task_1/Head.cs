@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.MidSemester.Task_1
+namespace DesignPatterns.MidSemester.task_1
 {
 
-    public class Head : ICloseAction
-    {
-        public string ExecuteCloseAction()
+        public class Head : ICloseAction
         {
-            return "head head";
+            public string ExecuteCloseAction()
+            {
+                return "head head";
+            }
         }
-    }
 }

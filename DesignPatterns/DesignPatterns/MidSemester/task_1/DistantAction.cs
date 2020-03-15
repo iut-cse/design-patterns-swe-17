@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.MidSemester.Task_1
+namespace DesignPatterns.MidSemester.task_1
 {
  
 		public abstract class DistantAction
 		{
-		public IEnumerable<string> ExecuteDistantAction()
+			public IEnumerable<string> ExecuteDistantAction()
 			{
 				yield return Move();
 				yield return Grab();
