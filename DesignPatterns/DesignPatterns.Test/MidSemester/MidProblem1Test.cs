@@ -1,5 +1,5 @@
 ﻿using DesignPatterns.MidSemester;
-using DesignPatterns.MidSemester.task_1;
+using DesignPatterns.MidSemester.Task_1;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
@@ -30,7 +30,7 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Power()
         {
-            Ratul ratul = new Ratul(null, new DesignPatterns.MidSemester.task_1.Power());
+            Ratul ratul = new Ratul(null, new Power());
             Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
         }
 

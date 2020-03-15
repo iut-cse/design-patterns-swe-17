@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPatterns.MidSemester.task_1
+namespace DesignPatterns.MidSemester.Task_1
 {
     public class Skill : DistantAction
     {
-        public override string Grab()
+        protected override string Grab()
         {
             return "hold collar";
         }
-        public override string Hit()
+        protected override string Hit()
         {
             return "knee! knee!! knee!!!";
         }
