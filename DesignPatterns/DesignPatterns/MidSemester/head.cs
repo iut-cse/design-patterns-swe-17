@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.MidSemester
 {
-    public class head:ICloseAction
+    public class head :ICloseAction
 
     {
 
