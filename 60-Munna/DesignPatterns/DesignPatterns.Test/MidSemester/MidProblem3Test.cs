@@ -8,6 +8,7 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void DoTest()
         {
+
             Preference obj1 = Preference.GetpreferenceInstance(); // initialize correctly
             obj1.setPreference("abc", "123");// set value "123" with key "abc"
             string abckey1 = obj1.getPreference("abc"); // get with key "abc";
