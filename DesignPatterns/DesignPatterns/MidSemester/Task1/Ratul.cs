@@ -13,7 +13,7 @@ namespace DesignPatterns.MidSemester.Task1
         }
         public string ExecuteCloseAction()
         {
-            return closeAction.ExecuteCloseAction;
+            return closeAction.ExecuteCloseAction();
         }
 
         public IEnumerable<string> ExecuteDistantAction()

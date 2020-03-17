@@ -13,5 +13,6 @@ namespace DesignPatterns.Reports.Kpis
         }
 
         protected abstract double KpiFunction(List<ClassInfo> filtered);
+
     }
 }

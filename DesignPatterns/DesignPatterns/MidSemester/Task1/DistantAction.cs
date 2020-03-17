@@ -1,4 +1,6 @@
-﻿namespace DesignPatterns.MidSemester.Task1
+﻿using System.Collections.Generic;
+namespace DesignPatterns.MidSemester.Task1
+
 {
 
 	public abstract class DistantAction

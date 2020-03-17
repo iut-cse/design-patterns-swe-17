@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Reports.Kpis;
+﻿  
+using DesignPatterns.Reports.Kpis;
 using System;
 using Xunit;
 

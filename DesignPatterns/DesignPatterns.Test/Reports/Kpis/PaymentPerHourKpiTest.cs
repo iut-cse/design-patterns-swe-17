@@ -1,5 +1,6 @@
-﻿using DesignPatterns.Reports.Kpis;
+﻿
 using System;
+using DesignPatterns.Reports.Kpis;
 using Xunit;
 
 namespace DesignPatterns.Test.Reports.Kpis
@@ -10,11 +11,9 @@ namespace DesignPatterns.Test.Reports.Kpis
         public void Monday()
         {
             var data = TestData.CreateData();
-            var tch = new TotalPaymentKpi(data, DayOfWeek.Monday);
-            var output = tch.Calculate();
-
-            Assert.Equal(5200, output["Physics"]);
-            Assert.Equal(2100, output["Bangla"]);
+            var tch = new PaymentPerHourKpi();
+            var actual = tch.Calculate(data, ci => ci.date.DayOfWeek == DayOfWeek.Monday && ci.department == "Physics");
+            Assert.Equal(5200.0/9, actual, 4);
         }
     }
 }
