@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="C:\Users\ASUS\Desktop\Mid Problem Solve DP\56-dipro\MidProblem3Test.cs" Link="MidProblem3Test.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Npgsql" Version="4.1.3" />
     <PackageReference Include="xunit" Version="2.4.1" />
