@@ -7,7 +7,7 @@ namespace DesignPatterns.MidSemester.Task1
 	{
 		public string Move()
 		{
-			return "Move";
+			return "move";
 		}
 		public abstract string Grab();
 		public abstract string Hit();

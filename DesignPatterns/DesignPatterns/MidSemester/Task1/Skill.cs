@@ -9,7 +9,7 @@
         }
         public override string Hit()
         {
-            return "knee! knee!! knee!!";
+            return "knee! knee!! knee!!!";
         }
     }
 }
