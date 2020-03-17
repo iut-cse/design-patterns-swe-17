@@ -5,7 +5,7 @@
 	{
 		public string ExecuteCloseAction()
 		{
-			return "header";
+			return "head head";
 		}
 	}
 }

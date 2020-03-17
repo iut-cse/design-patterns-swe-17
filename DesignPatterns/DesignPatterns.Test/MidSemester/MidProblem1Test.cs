@@ -15,7 +15,7 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Kick()
         {
-            Ratul ratul = null;
+            Ratul ratul = new Ratul(new Kick(), new Power());
             Assert.Equal("kick", ratul.ExecuteCloseAction());
         }
 
