@@ -6,7 +6,7 @@ namespace DesignPatterns.Test.Reports.Kpis
 {
     public class TestData
     {
-        public static IEnumerable<ClassInfo> CreateData()
+        public static List<ClassInfo> CreateData()
         {
             return new List<ClassInfo>
             {
