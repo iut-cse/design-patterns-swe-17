@@ -15,10 +15,12 @@ namespace DesignPatterns.Test.MidSemester
             string abcValue = pref1.getPreference("abc"); // get with key "abc";
             Assert.Equal("123", abcValue);
 
-            //Preference instance2 = null; // initialize correctly
-            // set value "567" with key "abc" in instance2.
-            // get value with key "abc" from instance1.
-            // assert
+            Preference pref2 = Preference.getInstance(); // initialize correctly
+            pref2.setPreference("abc", "567");  // set value "567" with key "abc" in instance2.
+            string abcValue2 = pref1.getPreference("abc"); // get value with key "abc" from instance1.
+            Assert.Equal("567", abcValue2);
+            
         }
+      
     }
 }
