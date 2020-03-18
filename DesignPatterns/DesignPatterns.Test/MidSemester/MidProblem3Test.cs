@@ -15,9 +15,11 @@ namespace DesignPatterns.Test.MidSemester
             Assert.Equal("123", abcValue);
 
             Preference instance2 = Preference.GetInstance(); // initialize correctly
-            instance2.setPreference("abs", "576");// set value "567" with key "abc" in instance2.
-            string abcVAL = instance2.getPreference("abc");// get value with key "abc" from instance1.
-            Assert.Equal("576", abcVAL);// assert
+            instance2.setPreference("abs", "576"); // set value "567" with key "abc" in instance2.
+            string abcVAL = instance2.getPreference("abs"); // get value with key "abc" from instance1.*/
+            Assert.Equal("576", abcVAL);
+
+           
         }
     }
 }

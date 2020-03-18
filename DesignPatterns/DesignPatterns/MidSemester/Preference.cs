@@ -7,9 +7,7 @@ namespace DesignPatterns.MidSemester
     {
         private static object ThreadLock = new object();
         private static Preference instance;
-        private string TheKey;
-        private string TheValue;
-        private Dictionary<string, string> storage;
+        private readonly Dictionary<string, string> storage;
 
         public static Preference GetInstance()
         {
@@ -35,13 +33,14 @@ namespace DesignPatterns.MidSemester
 
         public void setPreference(string key, string value)
         {
-            TheKey = key;
-            TheValue = value;
+            /*TheKey = key;
+            TheValue = value;*/
+            storage.Add(key, value);
         }
 
         public string getPreference(string key)
         {
-            if (key.Equals(TheKey))
+            /*if (key.Equals(TheKey))
             {
                 return TheValue;
             }
@@ -49,7 +48,8 @@ namespace DesignPatterns.MidSemester
             else
             {
                 return "null";
-            }
+            }*/
+            return storage[key];
         }
     }
 }
