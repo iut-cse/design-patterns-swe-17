@@ -41,8 +41,13 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void CompressThenEncodeThenEncrypt()
         {
-            // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            IStatistics stat = new PlainTxt();
+            stat = new Compressed(stat);
+            stat = new Encoded(stat);
+            stat = new Encrypted(stat);
+            var converted = stat.convertTxt(original);
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }
