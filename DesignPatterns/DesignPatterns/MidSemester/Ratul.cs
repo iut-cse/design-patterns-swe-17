@@ -2,17 +2,31 @@
 
 namespace DesignPatterns.MidSemester
 {
-    public class Ratul
+    public partial class Ratul
     {
-        public string ExecuteCloseAction(ICloseAction closeAction)
+
+        ICloseAction CloseAction = null;
+        IDistantAction distantAction = null;
+        public Ratul(ICloseAction CloseAction)
         {
-            return closeAction.performCloseAction();
+            this.CloseAction = CloseAction;
+        }
+        public Ratul(IDistantAction distantAction)
+        {
+            this.distantAction = distantAction;
         }
 
-        public IEnumerable<string> ExecuteDistantAction(IDistantAction distantAction)
+        public string ExecuteCloseAction()
         {
-            
-            return distantAction.PerformDistantaction();
+            return CloseAction.action();
         }
+
+        public IEnumerable<string> ExecuteDistantAction()
+        {
+           
+            return distantAction.TemplateMethod();
+        }
+
+
     }
 }

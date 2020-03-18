@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,42 +8,42 @@ namespace DesignPatterns.MidSemester
 
         public abstract class IDistantAction
         {
-            public IEnumerable<String> PerformDistantaction()
+            public IEnumerable<String> TemplateMethod()
             {
-                yield return Move();
-                yield return Grab();
-                yield return Hit();
+                yield return move();
+                yield return grab();
+                yield return hit();
             }
-            private String Move()
+             String move()
             {
                 return "move";    // Concrete Method
             }
 
-            abstract public String Grab();
-            abstract public String Hit();
+             public abstract String grab();
+             public abstract String hit();
         }
 
-        public class PowerAction : IDistantAction
+        public class Power : IDistantAction
         {
-            public override string Grab()
+            public override string grab()
             {
                 return "pick up";
             }
 
-            public override string Hit()
+            public override string hit()
             {
-                return "slam";
+                return "slam!";
             }
         }
 
-        public class SkillAction :IDistantAction
+        public class Skill :IDistantAction
         {
-            public override string Grab()
+            public override string grab()
             {
                 return "hold collar";
             }
 
-            public override string Hit()
+            public override string hit()
             {
                 return "knee! knee!! knee!!!";
             }

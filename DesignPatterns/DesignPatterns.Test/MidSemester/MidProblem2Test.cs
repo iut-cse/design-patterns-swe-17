@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using DesignPatterns.MidSemester;
+using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -8,7 +9,7 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = new NoConverter(original); // Do the "No Change" conversion.
+            var converted = new NoConverter().Convert(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 

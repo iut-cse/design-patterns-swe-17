@@ -11,13 +11,18 @@ namespace DesignPatterns.MidSemester
 
      
         private IDictionary<string, string> list = new Dictionary<string, string>();
-
+        private static readonly object ThreadLock = new object();
          public static Preference GetInstance()
         {
 
             if (instance == null)
             {
-                instance = new Preference();
+                lock (ThreadLock) ;
+                if (instance == null)
+
+                {
+                    instance = new Preference();
+                }
             }
             return instance;
         }

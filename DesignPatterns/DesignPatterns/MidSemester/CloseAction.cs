@@ -7,29 +7,29 @@ namespace DesignPatterns.MidSemester
 
     public interface ICloseAction
     {
-        String performCloseAction();
+        String action();
     }
 
 
-    public class Punch : ICloseAction
+    public class punch : ICloseAction
     {
-        public string performCloseAction()
+        public string action()
         {
             return "punch";
         }
     }
 
-    public class Kick : ICloseAction
+    public class kick : ICloseAction
     {
-        public string performCloseAction()
+        public string action()
         {
             return "kick";
         }
     }
 
-    public class Head : ICloseAction
+    public class head : ICloseAction
     {
-        public string performCloseAction()
+        public string action()
         {
             return "head head";
         }

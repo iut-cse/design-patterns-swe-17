@@ -1,4 +1,5 @@
-﻿
+﻿using DesignPattern.Midsemester;
+
 namespace DesignPatterns.MidSemester
 {
 

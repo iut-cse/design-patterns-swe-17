@@ -8,41 +8,42 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Punch()
         {
-            
-            Ratul ratul = null;
-             Assert.Equal("punch", ratul.ExecuteCloseAction(new Punch()));
+            ICloseAction action = new punch();
+            Ratul ratul = new Ratul(action);
+            Assert.Equal("punch", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Kick()
         {
-            
-            Ratul ratul = null ; 
-             Assert.Equal("kick", ratul.ExecuteCloseAction(new Kick()));
+            ICloseAction action = new kick();
+            Ratul ratul = new Ratul(action);
+            Assert.Equal("kick", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Head()
         {
-           
-            Ratul ratul = null ;
-             Assert.Equal("head head", ratul.ExecuteCloseAction(new Head()));
+            ICloseAction action = new head();
+            Ratul ratul = new Ratul(action);
+            Assert.Equal("head head", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Power()
         {
-            
-            Ratul ratul =  null;
-            Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction(new PowerAction()));
+            IDistantAction action = new Power();
+            Ratul ratul = new Ratul(action);
+            Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
         }
 
         [Fact]
         void Skill()
         {
-        
-            Ratul ratul = null;
-            Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction(new SkillAction()));
+
+            IDistantAction action = new Skill();
+            Ratul ratul = new Ratul(action);
+            Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace DesignPatterns.MidSemester
+﻿using DesignPattern.Midsemester;
+
+namespace DesignPatterns.MidSemester
 {
 
 	public class Encrypt : ConvertionDecorator
