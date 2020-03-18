@@ -14,7 +14,7 @@ namespace DesignPatterns.MidSemester.Task2
 
         public override string convertTxt(string statistics)
         {
-            return base.convertTxt(statistics).ToLower();
+            return base.convertTxt(statistics).ToLowerInvariant();
         }
     }
 }
