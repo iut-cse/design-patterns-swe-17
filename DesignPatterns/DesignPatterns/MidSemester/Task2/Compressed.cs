@@ -8,9 +8,7 @@ namespace DesignPatterns.MidSemester.Task2
     {
         public IStatistics stat;
 
-        public Compressed(IStatistics stat) : base(stat)
-        {
-        }
+        public Compressed(IStatistics stat) : base(stat) {}
 
         public override string convertTxt(string statictics)
         {

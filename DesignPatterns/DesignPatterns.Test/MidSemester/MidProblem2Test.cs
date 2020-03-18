@@ -29,7 +29,12 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            IStatistics stat = new PlainTxt();
+            stat = new Encrypted(stat);
+            stat = new Compressed(stat);
+            stat = new Encoded(stat);
+            stat = new Compressed(stat);
+            var converted = stat.convertTxt(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
