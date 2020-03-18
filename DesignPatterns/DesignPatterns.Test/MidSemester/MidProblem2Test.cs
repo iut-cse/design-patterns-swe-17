@@ -8,7 +8,8 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            GamerStat gamer = new GamerStat();
+            var converted = gamer.Stat(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 
@@ -16,7 +17,8 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncrypt()
         {
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            BaseDecorator gamer = new EncryptorDecorator(new CompressorDecorator(new GamerStat()));
+            var converted = gamer.Stat(original); // compress then encryppt.
             Assert.Equal("top score is 3", converted);
         }
 
@@ -24,7 +26,8 @@ namespace DesignPatterns.Test.MidSemester
         void EncryptThenCompressThenEncodeThenCompress()
         {
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            BaseDecorator gamer = new CompressorDecorator(new EncoderDecorator(new CompressorDecorator(new EncryptorDecorator(new GamerStat()))));
+            var converted = gamer.Stat(original); // do the convertion
             Assert.Equal("(top score is ", converted);
         }
 
@@ -32,7 +35,11 @@ namespace DesignPatterns.Test.MidSemester
         void CompressThenEncodeThenEncrypt()
         {
             // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            BaseDecorator gamer = new EncryptorDecorator(new EncoderDecorator(new CompressorDecorator(new GamerStat())));
+            var converted = gamer.Stat(original);
+            Assert.Equal("(top score is 3)",converted);
+            
         }
     }
 }
