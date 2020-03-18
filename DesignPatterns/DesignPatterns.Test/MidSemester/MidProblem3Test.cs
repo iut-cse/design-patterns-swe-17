@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.MidSemester;
+using DesignPatterns.MidSemester.Task3;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
@@ -8,9 +9,10 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void DoTest()
         {
-            //Preference instance1 = null; // initialize correctly
+            Preference pref1 = Preference.getInstance(); // initialize correctly
             // set value "123" with key "abc"
-            string abcValue = null; // get with key "abc";
+            pref1.setPreference("abc", "123");
+            string abcValue = pref1.getPreference("abc"); // get with key "abc";
             Assert.Equal("123", abcValue);
 
             //Preference instance2 = null; // initialize correctly

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester.Task3
 {
-    class Preference
+    public class Preference
     {
         
 
@@ -31,6 +31,15 @@ namespace DesignPatterns.MidSemester.Task3
             }
 
             return instance;
+        }
+        public void setPreference(string key, string value)
+        {
+            preference[key] = value;
+        }
+
+        public string getPreference(string key)
+        {
+            return preference[key];
         }
     }
 }
