@@ -13,7 +13,7 @@ namespace DesignPatterns.MidSemester.Problem_2
             this.datawrappee = datawrappee;
         }
 
-        public string Convert(string data)
+        public virtual string Convert(string data)
         {
             data = SelfConvert(data);
             return datawrappee.Convert(data);
