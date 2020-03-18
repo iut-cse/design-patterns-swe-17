@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester.Task2
 {
-    abstract class DecoratedTxt : IStatistics
+    public abstract class DecoratedTxt : IStatistics
     {
         private IStatistics stats;
         public DecoratedTxt(IStatistics stats)

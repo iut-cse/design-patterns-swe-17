@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester.Task2
 {
-    class Compressed : DecoratedTxt
+    public class Compressed : DecoratedTxt
     {
         public IStatistics stat;
 
