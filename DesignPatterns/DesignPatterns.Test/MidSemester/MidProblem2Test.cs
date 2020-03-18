@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using DesignPatterns.MidSemester.Task2;
 
 namespace DesignPatterns.Test.MidSemester
 {
@@ -8,7 +9,8 @@ namespace DesignPatterns.Test.MidSemester
         void NoChange()
         {
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            IStatistics stat = new PlainTxt();
+            var converted = stat.convertTxt(original); // Do the "No Change" conversion.
             Assert.Equal("Top Score is 305", converted);
         }
 

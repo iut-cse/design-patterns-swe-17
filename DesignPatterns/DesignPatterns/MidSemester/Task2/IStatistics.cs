@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester.Task2
 {
-    public interface Stats
+    public interface IStatistics
     {
-        public string getStats();
+        public string convertTxt(string stats);
     }
-
+    
 }
