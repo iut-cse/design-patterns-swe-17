@@ -6,6 +6,6 @@ namespace DesignPatterns.MidSemester.Problem_2
 {
     public interface IConversion
     {
-        public string Convert(string data);
+        string Convert(string data);
     }
 }

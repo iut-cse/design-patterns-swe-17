@@ -8,13 +8,13 @@ namespace DesignPatterns.MidSemester.Problem_2
     {
         public Encode(IConversion datawrappee) : base(datawrappee)
         {
-            this.datawrappee = datawrappee;
+            
         }
 
-        public override string SelfConvert(string data)
+        public override string Convert(string data)
         {
             data = "(" + data + ")";
-            return data;
+            return base.Convert(data);
         }
     }
 }

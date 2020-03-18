@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester.Problem_2
 {
-    public abstract class ConversionDecorator: IConversion
+    public class ConversionDecorator: IConversion
     {
-        protected IConversion datawrappee;
+        private readonly IConversion datawrappee;
 
         public ConversionDecorator(IConversion datawrappee)
         {
@@ -15,10 +15,10 @@ namespace DesignPatterns.MidSemester.Problem_2
 
         public virtual string Convert(string data)
         {
-            data = SelfConvert(data);
+            
             return datawrappee.Convert(data);
         }
 
-        public abstract string SelfConvert(string data);
+       
     }
 }
