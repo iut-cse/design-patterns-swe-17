@@ -1,7 +1,7 @@
 ﻿using Xunit;
 using DesignPatterns.MidSemester.Problem2;
 
-namespace DesignPatterns.Test.MidSemester.Problem2
+namespace DesignPatterns.Test.MidSemester
 {
     public class MidProblem2Test
     {
