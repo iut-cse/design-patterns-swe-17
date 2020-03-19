@@ -3,9 +3,9 @@
     public class Encryption : CDecorator{
         public Encryption(IConverter wrappee) : base(wrappee){
         }
-        public override string Convert(string mydata){
+        public override string Converter(string mydata){
             data = data.ToLower();
-            return base.Convert(mydata);
+            return base.Converter(mydata);
         }
     }
 }

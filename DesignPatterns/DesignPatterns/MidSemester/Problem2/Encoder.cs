@@ -8,7 +8,7 @@ namespace DesignPatterns.MidSemester.Problem2
         public Encoder(IConverter wrappee) : base(wrappee)
         {
         }
-        public override string Convert(string mydata)
+        public override string Converter(string mydata)
         {
             mydata = "(" + data + ")";
             return base.Converter(mydata);
