@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 namespace DesignPatterns.MidSemester
 {
-    public abstract class DistantAction
+    public abstract class DistantAction.Problem1
     {
         public IEnumerable<string> ExecuteDistantAction(){
             yield return Grab();
