@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.MidSemester
 {
-    public class Ratul
+    public class Ratul.Problem1
     {
         private DistantAction DistantAction;
         private ICloseAction ICloseAction;
