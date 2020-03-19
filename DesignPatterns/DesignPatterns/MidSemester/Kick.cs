@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 namespace DesignPatterns.MidSemester{
     public class Kick : ICloseAction{
-        public string ExCloseAction(){
+        public string ExecuteCloseAction(){
             return "kick";
         }
     }

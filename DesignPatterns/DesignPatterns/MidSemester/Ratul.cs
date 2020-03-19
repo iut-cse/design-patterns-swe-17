@@ -4,18 +4,21 @@ namespace DesignPatterns.MidSemester
 {
     public class Ratul
     {
-        public string ExecuteCloseAction()
-        {
-            return null;
-        }
+        private DistantAction DistantAction;
+        private ICloseAction ICloseAction;
 
+        public Ratul(ICloseAction ICloseAction, DistantAction DistantAction)
+        {
+            this.ICloseAction = ICloseAction;
+            this.DistantAction = DistantAction;
+        }
         public IEnumerable<string> ExecuteDistantAction()
         {
-            // you can return a array or list of string. Both array and list are subtypes of IEnumerable
-            // However, there is a thing called `yield return` in C#.
-            // Using it would be "cool"
-            // Make sure you understand it if you choose to use it.
-            return null;
+            return DistantAction.ExecuteDistantAction();
+        }
+        public string ExecuteCloseAction()
+        {
+            return ICloseAction.ExecuteCloseAction();
         }
     }
 }
