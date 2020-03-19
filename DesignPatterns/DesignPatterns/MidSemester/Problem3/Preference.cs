@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.MidSemester
+﻿namespace DesignPatterns.MidSemester.Problem3
 {
     public class Preference
     {
