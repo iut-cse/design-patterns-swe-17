@@ -8,35 +8,35 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void Punch()
         {
-            Ratul ratul = null;
-            Assert.Equal("punch", ratul.ExecuteCloseAction());
+            Ratul ratul = new Ratul(new Punch(), new Power());
+            Assert.Equal("PUNCH", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Kick()
         {
-            Ratul ratul = null;
-            Assert.Equal("kick", ratul.ExecuteCloseAction());
+            Ratul ratul = new Ratul(new Kick(), new Power());
+            Assert.Equal("KICK", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Head()
         {
-            Ratul ratul = null;
-            Assert.Equal("head head", ratul.ExecuteCloseAction());
+            Ratul ratul = new Ratul(new Head(), new Power());
+            Assert.Equal("HEAD HEAD", ratul.ExecuteCloseAction());
         }
 
         [Fact]
         void Power()
         {
-            Ratul ratul = null;
+            Ratul ratul = new Ratul(new Head(), new Power());
             Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
         }
 
         [Fact]
         void Skill()
         {
-            Ratul ratul = null;
+            Ratul ratul = new Ratul(new Head(), new Skill());
             Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
         }
     }

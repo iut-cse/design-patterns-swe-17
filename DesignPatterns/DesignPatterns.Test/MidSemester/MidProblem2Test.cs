@@ -1,5 +1,5 @@
 ﻿using Xunit;
-
+using DesignPatterns.MidSemester;
 namespace DesignPatterns.Test.MidSemester
 {
     public class MidProblem2Test
@@ -7,32 +7,52 @@ namespace DesignPatterns.Test.MidSemester
         [Fact]
         void NoChange()
         {
+            // Do the "No Change" conversion.
             var original = "Top Score is 305";
-            var converted = ""; // Do the "No Change" conversion.
+            Data file = new Data(original);
+            string converted = file.Convert();
             Assert.Equal("Top Score is 305", converted);
         }
 
         [Fact]
         void CompressThenEncrypt()
         {
+            // compress then encryppt.
             var original = "Top Score is 305";
-            var converted = ""; // compress then encryppt.
+            Info file = new Data(original);
+            file = new Compressed(file);
+            file = new Encryption(file);
+            var converted = file.Convert(); 
             Assert.Equal("top score is 3", converted);
         }
 
         [Fact]
         void EncryptThenCompressThenEncodeThenCompress()
         {
+            // do the convertion
             var original = "Top Score is 305";
-            var converted = ""; // do the convertion
+            Info file = new Data(original);
+            file = new Encryption(file);
+            file = new Compressed(file);
+            file = new Encoding(file);
+            file = new Compressed(file);
+            var converted = file.Convert(); 
             Assert.Equal("(top score is ", converted);
         }
 
         [Fact]
         void CompressThenEncodeThenEncrypt()
         {
-            // TODO: Implement this;
-            Assert.True(false);
+            var original = "Top Score is 305";
+            Info file = new Data(original);
+
+            file = new Compressed(file);
+            file = new Encoding(file);
+            file = new Encryption(file);
+
+            var converted = file.Convert(); // do the convertion
+            Assert.Equal("(top score is 3)", converted);
+            //Assert.True(false);
         }
     }
 }
