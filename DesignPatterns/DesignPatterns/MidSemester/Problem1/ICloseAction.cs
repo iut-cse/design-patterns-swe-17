@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-namespace DesignPatterns.MidSemester
+namespace DesignPatterns.MidSemester.Problem1
 {
     public interface ICloseAction
     {

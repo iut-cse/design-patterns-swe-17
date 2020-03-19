@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-namespace DesignPatterns.MidSemester
+namespace DesignPatterns.MidSemester.Problem1
 {
-    public abstract class DistantAction.Problem1
+    public abstract class DistantAction
     {
         public IEnumerable<string> ExecuteDistantAction(){
             yield return Grab();
