@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-namespace DesignPatterns.MidSemester{
-    public class Punch : ICloseAction{ 
-        public string ExecuteCloseAction(){
+namespace DesignPatterns.MidSemester.Problem1
+{
+    public class Punch : ICloseAction
+    { 
+        public string ExecuteCloseAction()
+        {
             return "punch";
         }
     }

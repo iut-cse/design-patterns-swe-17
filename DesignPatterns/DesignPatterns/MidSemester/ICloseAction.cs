@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-namespace DesignPatterns.MidSemester{
+namespace DesignPatterns.MidSemester
+{
     public interface ICloseAction
     {
-        string ExCloseAction();
+        string ExecuteCloseAction();
     }
 }
