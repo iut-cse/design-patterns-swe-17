@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatterns.MidSemester..Problem1
+namespace DesignPatterns.MidSemester.Problem1
 {
     public class Ratul
     {
