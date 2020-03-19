@@ -4,14 +4,7 @@ using System.Text;
 
 namespace DesignPatterns.MidSemester
 {
-    public interface DataSource
+    class FileDataSource
     {
-        public void writeData(string data);
-        public string readData();
     }
-
-
-
-
-
 }
