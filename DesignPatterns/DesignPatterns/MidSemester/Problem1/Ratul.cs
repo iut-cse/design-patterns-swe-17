@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatterns.MidSemester
+namespace DesignPatterns.MidSemester..Problem1
 {
-    public class Ratul.Problem1
+    public class Ratul
     {
         private DistantAction DistantAction;
         private ICloseAction ICloseAction;
