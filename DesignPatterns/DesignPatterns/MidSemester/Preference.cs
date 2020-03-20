@@ -2,32 +2,69 @@
 
 namespace DesignPatterns.MidSemester
 {
-    public sealed class Preference
+    public class Preference
     {
-        private static System.Collections.Generic.IDictionary<string, string> dict = new System.Collections.Generic.Dictionary<string, string>();
-        private static Preference instance = null;
-        public static Preference GetInstance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new Preference();
-                return instance;
-            }
-        }
-
+        private string key = null, value = null;
+        private static Preference _preference;
+        private static readonly object _lock = new object();
         private Preference()
         {
 
         }
-        public void setPreference(string key, string value)
+
+        public void setPreference(string v1, string v2)
         {
-            dict.Add(key, value);
+            throw new NotImplementedException();
         }
 
-        public string getPreference(string key)
+        public string getPreference(string v)
         {
-            return dict[key];
+            throw new NotImplementedException();
+        }
+
+        /*public static Preference GetInstance(string key,string value)
+        {
+            if (_preference == null)
+            {
+                lock (_lock)
+                {
+                    if (_preference == null)
+                    {
+                        _preference = new Preference();
+                        _preference.key = key;
+                        _preference.value = value;
+                    }
+                }
+            }
+            return _preference;
+        }*/
+
+        public static Preference GetInstance()
+        {
+            if (_preference == null)
+                lock (_lock)
+                    if (_preference == null)
+                        _preference = new Preference();
+
+            return _preference;
+        }
+
+        public string GetPreference(string key)
+        {
+            if (key == _preference.key)
+                return _preference.value;
+            return null;
+        }
+
+        public void SetPreference(string key, string value)
+        {
+            if (key == _preference.key)
+                _preference.value = value;
+            if (_preference.key == null)
+            {
+                _preference.key = key;
+                _preference.value = value;
+            }
         }
     }
 }

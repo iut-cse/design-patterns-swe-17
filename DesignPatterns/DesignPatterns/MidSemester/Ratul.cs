@@ -1,18 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DesignPatterns.MidSemester
 {
     public class Ratul
     {
-        Action action;
-        public Ratul(Action action)
+        public ICloseAction CurrentCloseAction;
+        public DistantAction CurrentDistantAction;
+
+
+        public Ratul(ICloseAction currentCloseAction, DistantAction currentDistantAction)
         {
-            this.action = action;
+            this.CurrentCloseAction = currentCloseAction;
+            this.CurrentDistantAction = currentDistantAction;
         }
+
         public string ExecuteCloseAction()
         {
-            List<string> ls = (List<string>)action.ExecuteAction();
-            return ls[0];
+            return CurrentCloseAction.DoAction();
         }
 
         public IEnumerable<string> ExecuteDistantAction()
@@ -21,7 +26,8 @@ namespace DesignPatterns.MidSemester
             // However, there is a thing called `yield return` in C#.
             // Using it would be "cool"
             // Make sure you understand it if you choose to use it.
-            return action.ExecuteAction();
+
+            return CurrentDistantAction.AllDistantAction();
         }
     }
 }

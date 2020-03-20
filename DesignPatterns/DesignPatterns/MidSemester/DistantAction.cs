@@ -2,17 +2,24 @@
 
 namespace DesignPatterns.MidSemester
 {
-    public abstract class DistantAction : Action
+    public abstract class DistantAction
     {
-        public abstract IEnumerable<string> ExecuteAction();
-        public IEnumerable<string> SequenceOfActions()
+        public List<string> ActionList = new List<string>();
+
+        public IEnumerable<string> AllDistantAction()
         {
-            return new List<string>() { Move(), Grab(), Hit() };
+            ActionList.Add(Move());
+            ActionList.Add(Grab());
+            ActionList.Add(Hit());
+
+            return ActionList;
         }
+
         public string Move()
         {
             return "move";
         }
+
         public abstract string Grab();
         public abstract string Hit();
     }

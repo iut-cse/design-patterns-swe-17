@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace DesignPatterns.MidSemester
+﻿namespace DesignPatterns.MidSemester
 {
-    public class Punch : CloseAction
+    public class Punch : ICloseAction
     {
-
-        public override IEnumerable<string> ExecuteAction()
+        public string DoAction()
         {
-            return new List<string>() { "punch" };
+            return "PUNCH";
         }
     }
 }

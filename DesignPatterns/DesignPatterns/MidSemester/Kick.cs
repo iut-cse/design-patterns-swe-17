@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace DesignPatterns.MidSemester
+﻿namespace DesignPatterns.MidSemester
 {
-    public class Kick : CloseAction
+    public class Kick : ICloseAction
     {
-
-        public override IEnumerable<string> ExecuteAction()
+        public string DoAction()
         {
-            return new List<string>() { "kick" };
+            return "KICK";
         }
     }
 }

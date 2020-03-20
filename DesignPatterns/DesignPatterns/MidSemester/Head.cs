@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace DesignPatterns.MidSemester
+﻿namespace DesignPatterns.MidSemester
 {
-    public class Head : CloseAction
+    public class Head : ICloseAction
     {
-
-        public override IEnumerable<string> ExecuteAction()
+        public string DoAction()
         {
-            return new List<string>() { "head head" };
+            return "HEAD HEAD";
         }
     }
 }
+

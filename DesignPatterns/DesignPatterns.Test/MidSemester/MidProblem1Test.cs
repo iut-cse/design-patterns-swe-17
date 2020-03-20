@@ -1,44 +1,44 @@
-﻿
 ﻿using DesignPatterns.MidSemester;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
-    public class MidProblem1Test
+    public class MidProblem2Test
     {
         [Fact]
-        void Punch()
+        void NoChange()
         {
-            Ratul ratul = new Ratul(new Punch());
-            Assert.Equal("punch", ratul.ExecuteCloseAction());
+            var original = "Top Score is 305";
+            GamerStat gamer = new GamerStat();
+            var converted = gamer.Stat(original); // Do the "No Change" conversion.
+            Assert.Equal("Top Score is 305", converted);
         }
 
         [Fact]
-        void Kick()
+        void CompressThenEncrypt()
         {
-            Ratul ratul = new Ratul(new Kick());
-            Assert.Equal("kick", ratul.ExecuteCloseAction());
+            var original = "Top Score is 305";
+            BaseDecorator gamer = new EncryptorDecorator(new CompressorDecorator(new GamerStat()));
+            var converted = gamer.Stat(original); // compress then encryppt.
+            Assert.Equal("top score is 3", converted);
         }
 
         [Fact]
-        void Head()
+        void EncryptThenCompressThenEncodeThenCompress()
         {
-            Ratul ratul = new Ratul(new Head());
-            Assert.Equal("head head", ratul.ExecuteCloseAction());
+            var original = "Top Score is 305";
+            BaseDecorator gamer = new CompressorDecorator(new EncoderDecorator(new CompressorDecorator(new EncryptorDecorator(new GamerStat()))));
+            var converted = gamer.Stat(original); // do the convertion
+            Assert.Equal("(top score is ", converted);
         }
 
         [Fact]
-        void Power()
+        void CompressThenEncodeThenEncrypt()
         {
-            Ratul ratul = new Ratul(new Power());
-            Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
-        }
-
-        [Fact]
-        void Skill()
-        {
-            Ratul ratul = new Ratul(new Skill());
-            Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
+            var original = "Top Score is 305";
+            BaseDecorator gamer = new EncryptorDecorator(new EncoderDecorator(new CompressorDecorator(new GamerStat())));
+            var converted = gamer.Stat(original);
+            Assert.Equal("(top score is 3)", converted);
         }
     }
 }

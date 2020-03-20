@@ -1,72 +1,43 @@
-﻿using Xunit;
-using DesignPatterns.MidSemester;
+﻿using DesignPatterns.MidSemester;
+using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
 {
-    public class MidProblem2Test
+    public class MidProblem1Test
     {
         [Fact]
-        void NoChange()
+        void Punch()
         {
-            var original = "Top Score is 305";
-            DataSource dataSource = new FileDataSource(original);
-            dataSource.writeData(original);
-            var converted = dataSource.readData(); // Do the "No Change" conversion.
-            Assert.Equal("Top Score is 305", converted);
+            Ratul ratul = new Ratul(new Punch(), new PowerDistantAction());
+            Assert.Equal("PUNCH", ratul.ExecuteCloseAction());
         }
 
         [Fact]
-        void CompressThenEncrypt()
+        void Kick()
         {
-            var original = "Top Score is 305";
-            var data = new CompressDecorator((new FileDataSource(original)));
-            data.writeData(original);
-            var data2 = new EncryptionDecorator(data);
-            data2.writeData(data.readData());
-            var converted = data2.readData(); // compress then encryppt.
-            Assert.Equal("top score is 3", converted);
+            Ratul ratul = new Ratul(new Kick(), new PowerDistantAction());
+            Assert.Equal("KICK", ratul.ExecuteCloseAction());
         }
 
         [Fact]
-        void EncryptThenCompressThenEncodeThenCompress()
+        void Head()
         {
-
-            var original = "Top Score is 305";
-            var data = new EncryptionDecorator(new FileDataSource(original));
-            data.writeData(original);
-            var data2 = new CompressDecorator(data);
-            data2.writeData(data.readData());
-            var data3 = new EncodeDecorator(data2);
-            data3.writeData(data2.readData());
-            var data4 = new CompressDecorator(data3);
-            data4.writeData(data3.readData());
-            var converted = data4.readData(); // do the convertion
-            Assert.Equal("(top score is ", converted);
+            Ratul ratul = new Ratul(new Head(), new PowerDistantAction());
+            Assert.Equal("HEAD HEAD", ratul.ExecuteCloseAction());
         }
 
         [Fact]
-        void CompressThenEncodeThenEncrypt()
+        void Power()
         {
-            var original = "Top Score is 305";
-            var data = new CompressDecorator(new FileDataSource(original));
-            data.writeData(original);
-            var data2 = new EncodeDecorator(data);
-            data2.writeData(data.readData());
-            var data3 = new EncryptionDecorator(data2);
-            data3.writeData(data2.readData());
-            var converted = data3.readData();
-            Assert.Equal("(top score is 3)", converted);
-        }
-    }
-}
-Assert.Equal("(top score is ", converted);
+            Ratul ratul = new Ratul(new Head(), new PowerDistantAction());
+            Assert.Equal(new[] { "move", "pick up", "slam!" }, ratul.ExecuteDistantAction());
         }
 
         [Fact]
-        void CompressThenEncodeThenEncrypt()
+        void Skill()
         {
-            // TODO: Implement this;
-            Assert.True(false);
+            Ratul ratul = new Ratul(new Head(), new SkillDistantAction());
+            Assert.Equal(new[] { "move", "hold collar", "knee! knee!! knee!!!" }, ratul.ExecuteDistantAction());
         }
     }
 }
