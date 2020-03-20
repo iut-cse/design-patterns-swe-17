@@ -27,7 +27,7 @@
         {
             if (key.Equals(key))
             {
-                return value;
+                return myvalue;
             }
             else
             {
