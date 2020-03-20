@@ -1,4 +1,4 @@
-﻿using DesignPatterns.MidSemester;
+﻿using DesignPatterns.MidSemester.Problem3;
 using Xunit;
 
 namespace DesignPatterns.Test.MidSemester
@@ -13,7 +13,7 @@ namespace DesignPatterns.Test.MidSemester
             string abcValue = instance1.GetPreference("abc");
             Assert.Equal("123", abcValue);
 
-            Preference instance2 = Preference.GetInstance(); // initialize correctly
+            Preference instance2 = Preference.GetInstance();
             instance2.SetPreference("abc", "567");
             var newAbcValue = instance1.GetPreference("abc");
             Assert.Equal("567", newAbcValue);
