@@ -1,17 +1,15 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-namespace DesignPatterns.MidSemester.Problem2
+﻿namespace DesignPatterns.MidSemester.Problem2
 {
-    public class Compresseion : CDecorator
+    public class Compression : CDecorator
     {
-        public Compression(IConverter wrappee) : base(wrappee){
+        public Compression(IConv wrappee) : base(wrappee)
+        {
         }
         public override string Converter(string mydata)
         {
-            if (mydata.length >= 3)
+            if (mydata.Length >= 3)
             {
-                mydata = mydata.Substring(0, mydata.length - 2);
+                mydata = mydata.Substring(0, mydata.Length - 2);
             }
             return base.Converter(mydata);
         }
