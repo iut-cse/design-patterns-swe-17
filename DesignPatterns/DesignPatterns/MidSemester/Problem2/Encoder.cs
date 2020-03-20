@@ -7,13 +7,7 @@
         {
         }
 
-        public override string Convert(string data)
-        {
-            data = Encode(data);
-            return base.Convert(data);
-        }
-
-        private string Encode(string data)
+        protected override string ConverSelf(string data)
         {
             return "(" + data + ")";
         }

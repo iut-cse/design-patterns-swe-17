@@ -9,13 +9,7 @@ namespace DesignPatterns.MidSemester.Problem2
         {
         }
 
-        public override string Convert(string data)
-        {
-            data = Encrypt(data);
-            return base.Convert(data);
-        }
-
-        private string Encrypt(string data)
+        protected override string ConverSelf(string data)
         {
             return data.ToLower();
         }
